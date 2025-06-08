@@ -77,7 +77,11 @@ keep if perpanel_19_20==1
 
 // Selecciono las variables que creo relevantes (luego puedo añadir más)
 
-keep conglome_19 vivienda_19 hogar_19 codperso_19
+keep conglome_19 vivienda_19 hogar_19 codperso_19 p401f_19 p401g1_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 p4191_19 p4192_19 p4193_19 p4194_19 p4195_19 p4196_19 p4197_19 p4198_19
+
+rename (p401f_19 p401g1_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 p4191_19 p4192_19 p4193_19 p4194_19 p4195_19 p4196_19 p4197_19 p4198_19) (viviadistrito madreviviadistrito padeceenfermedadcronica presentomalestar presentoenfermedad presentorecaida presentoaccidente nopresentoenf essalud seguroprivado eps segurooffaapol sis segurouniv seguroescolarpriv otroseguro)
+
+save "$processed/2019-2020_400.dta", replace
 
 //----------- Merge --------------///
 
@@ -87,3 +91,5 @@ use "$processed/2019-2020_500.dta"
 merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_300.dta"
 
 keep if _merge==3
+
+merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_400.dta"
