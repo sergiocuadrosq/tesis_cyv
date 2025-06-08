@@ -43,7 +43,47 @@ tab status_inf
 
 // Selecciono las variables que creo relevantes (luego puedo añadir más)
 
-keep p207_19 p208a_19 p209_19 p501_19 p505_19 p507_19 p510_19 p510a1_19 p510b_19 p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 p514_19 p519_19 p520_19 p521a_19 p521c_19 p524a1_19 p524a2_19 p528_19 p530a_19 p530b_19
-p535_19 p558c_19 p558d_19
+keep status_inf conglome_19 vivienda_19 hogar_19 codperso_19 p207_19 p208a_19 p209_19 p501_19 p507_19 p510_19 p510a1_19 p510b_19 p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 p514_19 p519_19 p520_19 p521a_19 p521c_19 p524a1_19 p524a2_19 p528_19 p530a_19 p530b_19 p535_19 p558c_19 p558d_19
 // Nota: pregunta 511, pregunta 556, pregunta 557, 558,558e
-rename (p207_19 p208a_19 p209_19)  (sexo edad estadocivil tuvotrabajo ocupprin)
+rename (p207_19 p208a_19 p209_19 p501_19 p507_19 p510_19 p510a1_19 p510b_19 p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 p514_19 p519_19 p520_19 p521a_19 p521c_19 p524a1_19 p524a2_19 p528_19 p530a_19 p530b_19 p535_19 p558c_19 p558d_19) (sexo edad estadocivil tuvotrabajo desempenocomo trabajopara registrosunat sistconta tipocontrato numperempresa horasocupprin tiempoocupprinanos tiempoocupprinmeses tuvotrabajosec trabajanormnumhoras horastrabajototalsemana pudomashoras deseaotrotrabajo ingresototalmonto ingresototalnosabe pagoespecie indepgananciatotal indepgananciatotalnosabe autoconsumo antepasados consideraindigena)
+
+
+save "$processed/2019-2020_500.dta", replace
+
+//-----------Módulo 300-----------//
+use "enaho01a-2019-2023-300-panel.dta"
+
+// Conservo a los que están en los dos primeros años al menos
+
+keep if perpanel_19_20==1
+
+// Selecciono las variables que creo relevantes (luego puedo añadir más)
+
+keep conglome_19 vivienda_19 hogar_19 codperso_19 p300a_19 p301a_19 p302_19 p307_19 p313_19 p314a_19 p316b_19
+
+rename (p300a_19 p301a_19 p302_19 p307_19 p313_19 p314a_19 p316b_19) (idiomaninez niveleducacion leerescribir asisteeducacionbasica razonnomatricula internet dispoelectronico)
+
+
+save "$processed/2019-2020_300.dta", replace
+
+//------------Modulo 400------------//
+cd "$raw"
+clear
+use "enaho01a-2019-2023-400-panel.dta"
+
+// Conservo a los que están en los dos primeros años al menos
+
+keep if perpanel_19_20==1
+
+// Selecciono las variables que creo relevantes (luego puedo añadir más)
+
+keep conglome_19 vivienda_19 hogar_19 codperso_19
+
+//----------- Merge --------------///
+
+
+cd "$processed"
+use "$processed/2019-2020_500.dta"
+merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_300.dta"
+
+keep if _merge==3
