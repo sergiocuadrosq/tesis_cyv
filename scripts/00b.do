@@ -91,5 +91,10 @@ use "$processed/2019-2020_500.dta"
 merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_300.dta"
 
 keep if _merge==3
+drop _merge
 
 merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_400.dta"
+keep if _merge==3
+drop _merge
+
+save "$processed/2019-2020.dta", replace
