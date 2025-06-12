@@ -83,6 +83,27 @@ rename (p401f_19 p401g1_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 
 
 save "$processed/2019-2020_400.dta", replace
 
+//------------Modulo 400------------//
+
+//------------Modulo 100------------//
+
+cd "$raw"
+clear
+use "enaho01-2019-2023-100-panel.dta"
+
+// Conservo a los que están en los dos primeros años al menos
+
+keep if hpanel_19_20==1
+
+keep 
+
+merge 1:m 
+
+
+
+
+
+
 //----------- Merge --------------///
 
 
