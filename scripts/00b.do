@@ -83,8 +83,6 @@ rename (p401f_19 p401g1_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 
 
 save "$processed/2019-2020_400.dta", replace
 
-//------------Modulo 400------------//
-
 //------------Modulo 100------------//
 
 cd "$raw"
@@ -95,18 +93,13 @@ use "enaho01-2019-2023-100-panel.dta"
 
 keep if hpanel_19_20==1
 
-keep 
 
-merge 1:m 
-
-
-
-
+save "$processed/2019-2020_100.dta", replace
 
 
 //----------- Merge --------------///
 
-
+clear
 cd "$processed"
 use "$processed/2019-2020_500.dta"
 merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_300.dta"
@@ -117,5 +110,10 @@ drop _merge
 merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_400.dta"
 keep if _merge==3
 drop _merge
+
+merge m:1 conglome_19 vivienda_19 hogar_19 using 2019-2020_100.dta
+keep if _merge==3
+drop _merge
+
 
 save "$processed/2019-2020.dta", replace
