@@ -93,17 +93,37 @@ use "enaho01-2019-2023-100-panel.dta"
 
 keep if hpanel_19_20==1
 
+keep conglome_19 vivienda_19 hogar_19 p101_19 p102_19 p103_19 p103a_19 p104_19 p104a_19 p105a_19 p105b_19 p106_19 p106b_19 p107b1_19 p110_19 p110a1_19 p110c_19 p111a_19 p112a_19 p1144_19 p1142_19
+
+rename (p101_19 p102_19 p103_19 p103a_19 p104_19 p104a_19 p105a_19 p105b_19 p106_19 p106b_19 p107b1_19 p110_19 p110a1_19 p110c_19 p111a_19 p1144_19 p1142_19) (tipovivienda materialparedes materialpisos materialtechos habitaciones habitacionesdormir viviendaes montoalquilervivienda creepagarianalquiler sunarp creditovivienda aguaprocedencia aguapotable sshh servicoielectrico internet celular)
 
 save "$processed/2019-2020_100.dta", replace
 
+//------------Modulo 200------------// (no lo usamos)
+
+//------------Modulo Sumaria------------// 
+cd "$raw"
+clear
+use "sumaria-2019-2023-panel.dta"
+
+keep if hpanel_19_20==1
+
+keep conglome_19 vivienda_19 hogar_19 mieperho_19 percepho_19 ingbruhd_19 ingindhd_19 insedthd_19 ingseihd_19 ingtexhd_19 ingexthd_19 ingtrahd_19 ingrenhd_19 ingmo1hd_19 inghog1d_19 gashog1d_19 estrsocial_19 linea_19 pobreza_19
+
+rename (mieperho_19 percepho_19 ingbruhd_19 ingindhd_19 insedthd_19 ingseihd_19 ingtexhd_19 ingexthd_19 ingtrahd_19 ingrenhd_19 ingmo1hd_19 inghog1d_19 gashog1d_19 estrsocial_19 linea_19 pobreza_19) (totalmiembroshogar totalprecepingresos ingbrutoactdep ingactind ingactsecdep ingactsecinde ingtransfext ingextraord ingtransfpais ingrentas ingmonetbruto ingbruto gastototbruto factsocio linea pobreza)
+
+
+save "$processed/2019-2020_sumaria.dta", replace
 
 //----------- Merge --------------///
 
 clear
 cd "$processed"
-use "$processed/2019-2020_500.dta"
-merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_300.dta"
 
+
+use "$processed/2019-2020_500.dta"
+
+merge 1:1 conglome_19 vivienda_19 hogar_19 codperso_19 using "$processed/2019-2020_300.dta"
 keep if _merge==3
 drop _merge
 
@@ -115,5 +135,8 @@ merge m:1 conglome_19 vivienda_19 hogar_19 using 2019-2020_100.dta
 keep if _merge==3
 drop _merge
 
+merge m:1 conglome_19 vivienda_19 hogar_19 using 2019-2020_sumaria.dta
+keep if _merge==3
+drop _merge
 
 save "$processed/2019-2020.dta", replace
