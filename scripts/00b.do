@@ -45,7 +45,7 @@ tab status_inf
 
 keep status_inf conglome_19 vivienda_19 hogar_19 codperso_19 p207_19 p208a_19 p209_19 p501_19 p507_19 p510_19 p510a1_19 p510b_19 p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 p514_19 p519_19 p520_19 p521a_19 p521c_19 p524a1_19 p524a2_19 p528_19 p530a_19 p530b_19 p535_19 p558c_19 p558d_19
 // Nota: pregunta 511, pregunta 556, pregunta 557, 558,558e
-rename (p207_19 p208a_19 p209_19 p501_19 p507_19 p510_19 p510a1_19 p510b_19 p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 p514_19 p519_19 p520_19 p521a_19 p521c_19 p524a1_19 p524a2_19 p528_19 p530a_19 p530b_19 p535_19 p558c_19 p558d_19) (sexo edad estadocivil tuvotrabajo desempenocomo trabajopara registrosunat sistconta tipocontrato numperempresa horasocupprin tiempoocupprinanos tiempoocupprinmeses tuvotrabajosec trabajanormnumhoras horastrabajototalsemana pudomashoras deseaotrotrabajo ingresototalmonto ingresototalnosabe pagoespecie indepgananciatotal indepgananciatotalnosabe autoconsumo antepasados consideraindigena)
+// rename (p207_19 p208a_19 p209_19 p501_19 p507_19 p510_19 p510a1_19 p510b_19 p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 p514_19 p519_19 p520_19 p521a_19 p521c_19 p524a1_19 p524a2_19 p528_19 p530a_19 p530b_19 p535_19 p558c_19 p558d_19) (sexo edad estadocivil tuvotrabajo desempenocomo trabajopara registrosunat sistconta tipocontrato numperempresa horasocupprin tiempoocupprinanos tiempoocupprinmeses tuvotrabajosec trabajanormnumhoras horastrabajototalsemana pudomashoras deseaotrotrabajo ingresototalmonto ingresototalnosabe pagoespecie indepgananciatotal indepgananciatotalnosabe autoconsumo antepasados consideraindigena)
 
 
 save "$processed/2019-2020_500.dta", replace
@@ -61,7 +61,7 @@ keep if perpanel_19_20==1
 
 keep conglome_19 vivienda_19 hogar_19 codperso_19 p300a_19 p301a_19 p302_19 p307_19 p313_19 p314a_19 p316b_19
 
-rename (p300a_19 p301a_19 p302_19 p307_19 p313_19 p314a_19 p316b_19) (idiomaninez niveleducacion leerescribir asisteeducacionbasica razonnomatricula internet dispoelectronico)
+//rename (p300a_19 p301a_19 p302_19 p307_19 p313_19 p314a_19 p316b_19) (idiomaninez niveleducacion leerescribir asisteeducacionbasica razonnomatricula internet dispoelectronico)
 
 
 save "$processed/2019-2020_300.dta", replace
@@ -79,7 +79,7 @@ keep if perpanel_19_20==1
 
 keep conglome_19 vivienda_19 hogar_19 codperso_19 p401f_19 p401g1_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 p4191_19 p4192_19 p4193_19 p4194_19 p4195_19 p4196_19 p4197_19 p4198_19
 
-rename (p401f_19 p401g1_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 p4191_19 p4192_19 p4193_19 p4194_19 p4195_19 p4196_19 p4197_19 p4198_19) (viviadistrito madreviviadistrito padeceenfermedadcronica presentomalestar presentoenfermedad presentorecaida presentoaccidente nopresentoenf essalud seguroprivado eps segurooffaapol sis segurouniv seguroescolarpriv otroseguro)
+//rename (p401f_19 p401g1_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 p4191_19 p4192_19 p4193_19 p4194_19 p4195_19 p4196_19 p4197_19 p4198_19) (viviadistrito madreviviadistrito padeceenfermedadcronica presentomalestar presentoenfermedad presentorecaida presentoaccidente nopresentoenf essalud seguroprivado eps segurooffaapol sis segurouniv seguroescolarpriv otroseguro)
 
 save "$processed/2019-2020_400.dta", replace
 
@@ -95,7 +95,7 @@ keep if hpanel_19_20==1
 
 keep conglome_19 vivienda_19 hogar_19 p101_19 p102_19 p103_19 p103a_19 p104_19 p104a_19 p105a_19 p105b_19 p106_19 p106b_19 p107b1_19 p110_19 p110a1_19 p110c_19 p111a_19 p112a_19 p1144_19 p1142_19
 
-rename (p101_19 p102_19 p103_19 p103a_19 p104_19 p104a_19 p105a_19 p105b_19 p106_19 p106b_19 p107b1_19 p110_19 p110a1_19 p110c_19 p111a_19 p1144_19 p1142_19) (tipovivienda materialparedes materialpisos materialtechos habitaciones habitacionesdormir viviendaes montoalquilervivienda creepagarianalquiler sunarp creditovivienda aguaprocedencia aguapotable sshh servicoielectrico internet celular)
+//rename (p101_19 p102_19 p103_19 p103a_19 p104_19 p104a_19 p105a_19 p105b_19 p106_19 p106b_19 p107b1_19 p110_19 p110a1_19 p110c_19 p111a_19 p1144_19 p1142_19) (tipovivienda materialparedes materialpisos materialtechos habitaciones habitacionesdormir viviendaes montoalquilervivienda creepagarianalquiler sunarp creditovivienda aguaprocedencia aguapotable sshh servicoielectrico internet celular)
 
 save "$processed/2019-2020_100.dta", replace
 
@@ -110,7 +110,7 @@ keep if hpanel_19_20==1
 
 keep conglome_19 vivienda_19 hogar_19 mieperho_19 percepho_19 ingbruhd_19 ingindhd_19 insedthd_19 ingseihd_19 ingtexhd_19 ingexthd_19 ingtrahd_19 ingrenhd_19 ingmo1hd_19 inghog1d_19 gashog1d_19 estrsocial_19 linea_19 pobreza_19
 
-rename (mieperho_19 percepho_19 ingbruhd_19 ingindhd_19 insedthd_19 ingseihd_19 ingtexhd_19 ingexthd_19 ingtrahd_19 ingrenhd_19 ingmo1hd_19 inghog1d_19 gashog1d_19 estrsocial_19 linea_19 pobreza_19) (totalmiembroshogar totalprecepingresos ingbrutoactdep ingactind ingactsecdep ingactsecinde ingtransfext ingextraord ingtransfpais ingrentas ingmonetbruto ingbruto gastototbruto factsocio linea pobreza)
+//rename (mieperho_19 percepho_19 ingbruhd_19 ingindhd_19 insedthd_19 ingseihd_19 ingtexhd_19 ingexthd_19 ingtrahd_19 ingrenhd_19 ingmo1hd_19 inghog1d_19 gashog1d_19 estrsocial_19 linea_19 pobreza_19) (totalmiembroshogar totalprecepingresos ingbrutoactdep ingactind ingactsecdep ingactsecinde ingtransfext ingextraord ingtransfpais ingrentas ingmonetbruto ingbruto gastototbruto factsocio linea pobreza)
 
 
 save "$processed/2019-2020_sumaria.dta", replace
@@ -140,3 +140,6 @@ keep if _merge==3
 drop _merge
 
 save "$processed/2019-2020.dta", replace
+
+
+
