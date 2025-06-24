@@ -1,0 +1,337 @@
+--------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2015-2016.
+> dta.log
+  log type:  text
+ opened on:  23 Jun 2025, 20:04:14
+============================================
+👉 Revisando etiquetas en: 2015-2016.dta
+============================================
+Variable: p501_15 — Etiqueta: p501
+p501:
+           1 si
+           2 no
+Variable: p507_15 — Etiqueta: p507
+p507:
+           1 empleador o patrono
+           2 trabajador independiente
+           3 empleado
+           4 obrero
+           5 trabajador familiar no remunerado
+           6 trabajador del hogar
+           7 otro
+Variable: p510_15 — Etiqueta: p510
+p510:
+           1 fuerzas armadas, policía nacional del perú (militares)
+           2 administración pública
+           3 empresa pública
+           5 empresas especiales de servicios (service)
+           6 empresa o patrono privado
+           7 otra
+Variable: p510a1_15 — Etiqueta: p510a1
+p510a1:
+           1 persona jurídica (sociedad anónima; srl; sociedad civil; eirl
+> ; fundación ó asociación, etc.)
+           2 persona natural (con r.u.c., rus, rer, u otro régimen)
+           3 no esta registrado (no tiene ruc)
+Variable: p510b_15 — Etiqueta: p510b
+p510b:
+           1 si
+           2 no
+Variable: p511a_15 — Etiqueta: p511a
+p511a:
+           1 contrato indefinido
+           2 contrato a plazo fijo
+           3 esta en periodo de prueba
+           4 convenios de formacion laboral juvenil
+           5 contrato por locación de servicios (honorarios profesionales,
+>  ruc) snp
+           6 régimes especial de contratación administrativa (cas)
+           7 sin contrato
+           8 otro
+Variable: p512a_15 — Etiqueta: p512a
+p512a:
+           1 hasta 20
+           2 de 21 a 50
+           3 de 51 a 100
+           4 de 101 a 500
+           5 más de 500
+Variable: p514_15 — Etiqueta: p514
+p514:
+           1 si
+           2 no
+Variable: p519_15 — Etiqueta: p519
+p519:
+           1 si
+           2 no
+Variable: p521a_15 — Etiqueta: p521a
+p521a:
+           1 si
+           2 no
+Variable: p521c_15 — Etiqueta: p521c
+p521c:
+           1 si
+           2 no
+Variable: p524a2_15 — Etiqueta: p524a2
+p524a2:
+           1 no sabe
+Variable: p528_15 — Etiqueta: p528
+p528:
+           1 si
+           2 no
+Variable: p530b_15 — Etiqueta: p530b
+p530b:
+           1 no sabe/no tiene ganancia
+Variable: p535_15 — Etiqueta: p535
+p535:
+           1 si
+           2 no
+           3 no corresponde
+Variable: p558c_15 — Etiqueta: p558c
+p558c:
+           1 quechua
+           2 aymara
+           3 nativo o indígena de la amazonía
+           4 negro/ mulato/zambo/afroperuano
+           5 blanco
+           6 mestizo
+           7 otro
+           8 no sabe
+Variable: p558d_15 — Etiqueta: p558d
+p558d:
+           1 si
+           2 no
+           3 no sabe
+Variable: p207_15 — Etiqueta: p207
+p207:
+           1 hombre
+           2 mujer
+Variable: p209_15 — Etiqueta: p209
+p209:
+           1 conviviente
+           2 casado(a)
+           3 viudo(a)
+           4 divorciado(a)
+           5 separado(a)
+           6 soltero(a)
+Variable: ocupinf_15 — Etiqueta: ocupinf
+ocupinf:
+           1 empleo informal
+           2 empleo formal
+Variable: ocupinf_16 — Etiqueta: ocupinf
+Variable: p300a_15 — Etiqueta: p300a
+p300a:
+           1  quechua
+           2 aymara
+           3 otra lengua nativa
+           4 castellano
+           6 portugués
+           7 otra lengua extranjera
+           8 es sordomudo/a,mudo/a
+Variable: p301a_15 — Etiqueta: p301a
+p301a:
+           1 sin nivel
+           2 educación inicial
+           3 primaria incompleta
+           4 primaria completa
+           5 secundaria incompleta
+           6 secundaria completa
+           7 sup. no univ. incompleta
+           8 sup. no univ. completa
+           9 sup. univ. incompleta
+          10 sup. univ. completa
+          11 postgrado
+Variable: p302_15 — Etiqueta: p302
+p302:
+           1 si
+           2 no
+Variable: p307_15 — Etiqueta: p307
+p307:
+           1 si
+           2 no
+Variable: p313_15 — Etiqueta: p313
+p313:
+           1 problemas económicos
+           2 estoy trabajando
+           3 terminó sus estudios: secundarios/ superiores /asiste a acade
+> mia preuniversitaria
+           4 no tiene la edad suficiente
+           5 problemas familiares
+           6 de vacaciones
+           7 no existe centro de educación básica o superior en el centro 
+> poblado
+           8 asiste a un centro de educación técnico productivo
+           9 no me interesa/no me gusta el estudio
+          10 se dedica a los quehaceres del hogar
+          11 otra razón
+Variable: p314a_15 — Etiqueta: p314a
+p314a:
+           1 si
+           2 no
+Variable: p401f_15 — Etiqueta: p401f
+p401f:
+           1 si
+           2 no
+           3 aún no había nacido
+Variable: p401_15 — Etiqueta: p401
+Variable: p4021_15 — Etiqueta: p4021
+p4021:
+           0 [salto]
+           1 sintoma o malestar (tos, dolor de cabeza, fiebre, nauseas)?
+Variable: p4022_15 — Etiqueta: p4022
+p4022:
+           1 enfermedad (gripe, colitis, etc)
+Variable: p4023_15 — Etiqueta: p4023
+p4023:
+           1 recaída de enfermedad crónica
+Variable: p4024_15 — Etiqueta: p4024
+p4024:
+           1 accidente
+Variable: p4025_15 — Etiqueta: p4025
+p4025:
+           1 no tuvo enfermedad, sintoma, recaída, accidente
+Variable: p4191_15 — Etiqueta: p4191
+p4191:
+           1 essalud (antes ipss)
+           2 no
+Variable: p4192_15 — Etiqueta: p4192
+p4192:
+           1 seguro privado de salud
+           2 no
+Variable: p4193_15 — Etiqueta: p4193
+p4193:
+           1 entidad prestadora de salud
+           2 no
+Variable: p4194_15 — Etiqueta: p4194
+p4194:
+           1 seguro ffaa - pnp
+           2 no
+Variable: p4195_15 — Etiqueta: p4195
+p4195:
+           1 seguro integral de salud
+           2 no
+Variable: p4196_15 — Etiqueta: p4196
+p4196:
+           1 seguro universitario
+           2 no
+Variable: p4197_15 — Etiqueta: p4197
+p4197:
+           1 seguro escolar privado
+           2 no
+Variable: p4198_15 — Etiqueta: p4198
+p4198:
+           1 otro
+           2 no
+Variable: p101_15 — Etiqueta: p101
+p101:
+           1 casa independiente
+           2 departamento en edificio
+           3 vivienda en quinta
+           4 vivienda en casa de vecindad (callejón, solar o corralón)
+           5 choza o cabaña
+           6 vivienda improvisada
+           7 local no destinado para habitación humana
+           8 otro
+Variable: p102_15 — Etiqueta: p102
+p102:
+           1 ladrillo o bloque de cemento
+           2 piedra o sillar con cal o cemento
+           3 adobe
+           4 tapia
+           5 quincha (caña con barro)
+           6 piedra con barro
+           7 madera
+           8 estera
+           9 otro material
+Variable: p103_15 — Etiqueta: p103
+p103:
+           1 parquet o madera pulida
+           2 láminas asfálticas, vinílicos o similares
+           3 losetas, terrazos o similares
+           4 madera (entablados)
+           5 cemento
+           6 tierra
+           7 otro material
+Variable: p103a_15 — Etiqueta: p103a
+p103a:
+           1 concreto armado
+           2 madera
+           3 tejas
+           4 planchas de calamina, fibra de cemento o similares
+           5 caña o estera con torta de barro
+           6 estera
+           7 paja, hojas de palmera
+           8 otro material
+Variable: p105a_15 — Etiqueta: p105a
+p105a:
+           1 alquilada
+           2 propia, totalmente pagada
+           3 propia, por invasión
+           4 propia, comprándola a plazos
+           5 cedida por el centro de trabajo
+           6 cedida por otro hogar o institución
+           7 otra forma
+Variable: p106b_15 — Etiqueta: p106b
+p106b:
+           1 si
+           2 no
+Variable: p107b1_15 — Etiqueta: p107b1
+p107b1:
+           1 si
+           2 no
+Variable: p110_15 — Etiqueta: p110
+p110:
+           1 red pública, dentro de la vivienda
+           2 red pública, fuera de la vivienda pero dentro del edificio
+           3 pilón de uso público
+           4 camión - cisterna u otro similar
+           5 pozo
+           6 río, acequia, manantial o similar
+           7 otra
+Variable: p110a1_15 — Etiqueta: p110a1
+p110a1:
+           1 si
+           2 no
+Variable: p111a_15 — Etiqueta: p111a
+p111a:
+           1 red pública de desagüe dentro de la vivienda
+           2 red pública de desagüe fuera de la vivienda pero dentro del e
+> dificio
+           3 letrina
+           4 pozo séptico
+           5 pozo ciego o negro
+           6 río, acequia o canal
+           7 otra
+           8 no tiene
+Variable: p112a_15 — Etiqueta: p112a
+p112a:
+           1 con medidor de uso exclusivo para la vivienda
+           2 con medidor de uso colectivo (para varias viviendas)
+           3 otro
+Variable: p1142_15 — Etiqueta: p1142
+p1142:
+           0 pase
+           1 celular
+Variable: p1144_15 — Etiqueta: p1144
+p1144:
+           0 pase
+           1 internet
+Variable: pobreza_15 — Etiqueta: pobreza
+pobreza:
+           1 pobre extremo
+           2 pobre no extremo
+           3 no pobre
+Variable: estrsocial_15 — Etiqueta: estrsocial
+estrsocial:
+           1 a
+           2 b
+           3 c
+           4 d
+           5 e
+           6 rural
+      name:  <unnamed>
+       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2015-2016.
+> dta.log
+  log type:  text
+ closed on:  23 Jun 2025, 20:04:14
+--------------------------------------------------------------------------
