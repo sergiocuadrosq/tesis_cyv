@@ -77,6 +77,9 @@ keep if status_inf==0 | status_inf==1
 * Guardar el dataset combinado
 save "$final/panel_final_combined_data.dta", replace
 
+export delimited using "panel_final_combined_data_nolables.csv", replace nolabel
+
+
 
 
 
