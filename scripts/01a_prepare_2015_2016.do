@@ -77,9 +77,10 @@ use "sumaria-2015-2019-panel.dta"
 
 keep if hpanel_1516 == 1
 
-keep conglome_15 vivienda_15 hogar_15 mieperho_15 percepho_15 ingbruhd_15 ingindhd_15 ///
-     insedthd_15 ingseihd_15 ingtexhd_15 ingexthd_15 ingtrahd_15 ingrenhd_15 ingmo1hd_15 ///
-     inghog1d_15 gashog1d_15 estrsocial_15 linea_15 pobreza_15
+keep conglome_15 vivienda_15 hogar_15 mieperho_15 percepho_15  pobreza_15
+
+
+// ingbruhd_15 ingindhd_15 /// insedthd_15 ingseihd_15 ingtexhd_15 ingexthd_15 ingtrahd_15 ingrenhd_15 ingmo1hd_15 /// inghog1d_15 gashog1d_15 estrsocial_15 linea_15
 
 save "$processed/2015-2016/2015-2016_sumaria.dta", replace
 

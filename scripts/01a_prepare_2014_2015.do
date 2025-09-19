@@ -22,6 +22,7 @@ keep if hpan1415 == 1
 keep conglome_14 vivienda_14 hogar_14 p101_14 p102_14 p103_14 p103a_14 p104_14 p104a_14 ///
      p105a_14 p105b_14 p106_14 p106b_14 p107b1_14 p110_14 p110a1_14 p111a_14 p112a_14 ///
      p1144_14 p1142_14
+	 
 
 save "$processed/2014-2015/2014-2015_100.dta", replace
 
@@ -74,9 +75,9 @@ use "sumaria-2014-2018-panel.dta"
 
 keep if hpan1415 == 1
 
-keep conglome_14 vivienda_14 hogar_14 mieperho_14 percepho_14 ingbruhd_14 ingindhd_14 ///
-     insedthd_14 ingseihd_14 ingtexhd_14 ingexthd_14 ingtrahd_14 ingrenhd_14 ingmo1hd_14 ///
-     inghog1d_14 gashog1d_14 estrsocial_14 linea_14 pobreza_14
+keep conglome_14 vivienda_14 hogar_14 mieperho_14 percepho_14 pobreza_14
+	 
+// ingbruhd_14 ingindhd_14 ///insedthd_14 ingseihd_14 ingtexhd_14 ingexthd_14 ingtrahd_14 ingrenhd_14 ingmo1hd_14 /// inghog1d_14 gashog1d_14 estrsocial_14 linea_14
 
 save "$processed/2014-2015/2014-2015_sumaria.dta", replace
 

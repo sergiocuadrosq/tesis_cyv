@@ -71,9 +71,9 @@ use "sumaria-2016-2020-panelf.dta"
 
 keep if hpanel1617 == 1
 
-keep conglome_16 vivienda_16 hogar_16 mieperho_16 percepho_16 ingbruhd_16 ingindhd_16 ///
-     insedthd_16 ingseihd_16 ingtexhd_16 ingexthd_16 ingtrahd_16 ingrenhd_16 ingmo1hd_16 ///
-     inghog1d_16 gashog1d_16 estrsocial_16 linea_16 pobreza_16
+keep conglome_16 vivienda_16 hogar_16 mieperho_16 percepho_16 pobreza_16
+
+// ingbruhd_16 ingindhd_16 /// insedthd_16 ingseihd_16 ingtexhd_16 ingexthd_16 ingtrahd_16 ingrenhd_16 ingmo1hd_16 /// inghog1d_16 gashog1d_16 estrsocial_16 linea_16
 
 save "$processed/2016-2017/2016-2017_sumaria.dta", replace
 

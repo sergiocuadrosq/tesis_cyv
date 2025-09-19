@@ -63,7 +63,10 @@ use "sumaria-2018-2022-panel.dta"
 
 keep if hpanel_18_19==1
 
-keep conglome_18 vivienda_18 hogar_18 mieperho_18 percepho_18 ingbruhd_18 ingindhd_18 insedthd_18 ingseihd_18 ingtexhd_18 ingexthd_18 ingtrahd_18 ingrenhd_18 ingmo1hd_18 inghog1d_18 gashog1d_18 estrsocial_18 linea_18 pobreza_18
+keep conglome_18 vivienda_18 hogar_18 mieperho_18 percepho_18 pobreza_18
+
+// keep linea_18 estrsocial_18 ingbruhd_18 ingindhd_18 insedthd_18 ingseihd_18 ingtexhd_18 ingexthd_18 ingtrahd_18 ingrenhd_18 ingmo1hd_18 inghog1d_18 gashog1d_18 pobreza_18
+
 
 save "$processed/2018-2019/2018-2019_sumaria.dta", replace
 

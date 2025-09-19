@@ -63,7 +63,9 @@ use "sumaria-2019-2023-panel.dta"
 
 keep if hpanel_19_20==1
 
-keep conglome_19 vivienda_19 hogar_19 mieperho_19 percepho_19 ingbruhd_19 ingindhd_19 insedthd_19 ingseihd_19 ingtexhd_19 ingexthd_19 ingtrahd_19 ingrenhd_19 ingmo1hd_19 inghog1d_19 gashog1d_19 estrsocial_19 linea_19 pobreza_19
+keep conglome_19 vivienda_19 hogar_19 mieperho_19 percepho_19 pobreza_19
+
+// keep linea_19 estrsocial_19 ingbruhd_19 ingindhd_19 insedthd_19 ingseihd_19 ingtexhd_19 ingexthd_19 ingtrahd_19 ingrenhd_19 ingmo1hd_19 inghog1d_19 gashog1d_19 pobreza_19
 
 save "$processed/2019-2020/2019-2020_sumaria.dta", replace
 
