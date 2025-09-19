@@ -106,4 +106,6 @@ merge m:1 conglome_14 vivienda_14 hogar_14 using "2014-2015_sumaria.dta"
 keep if _merge==3
 drop _merge
 
+GORDO JOSUE 
+
 save "$processed/2014-2015.dta", replace
