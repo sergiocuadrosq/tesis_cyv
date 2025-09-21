@@ -1,8 +1,8 @@
------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2018-2019.dta.log
   log type:  text
- opened on:  18 Sep 2025, 19:27:44
+ opened on:  20 Sep 2025, 20:01:47
 ============================================
 👉 Revisando etiquetas en: 2018-2019.dta
 ============================================
@@ -81,21 +81,10 @@ Variable: p521c_18 — Etiqueta: p521c
 p521c:
            1 si
            2 no
-Variable: p524a2_18 — Etiqueta: p524a2
-p524a2:
-           1 no sabe
 Variable: p528_18 — Etiqueta: p528
 p528:
            1 si
            2 no
-Variable: p530b_18 — Etiqueta: p530b
-p530b:
-           1 no sabe/no tiene ganancia
-Variable: p535_18 — Etiqueta: p535
-p535:
-           1 si
-           2 no
-           3 no corresponde
 Variable: p558c_18 — Etiqueta: p558c
 p558c:
            1 quechua
@@ -149,19 +138,6 @@ Variable: p307_18 — Etiqueta: p307
 p307:
            1 si
            2 no
-Variable: p313_18 — Etiqueta: p313
-p313:
-           1 problemas económicos
-           2 estoy trabajando
-           3 terminó sus estudios: secundarios/ superiores /asiste a academia preuniversitaria
-           4 no tiene la edad suficiente (para el grupo 3-5 años)
-           5 problemas familiares
-           6 de vacaciones
-           7 no existe centro de educación básica o superior en el centro poblado
-           8 asiste a un centro de educación técnico productiva
-           9 no me interesa/no me gusta el estudio
-          10 se dedica a los quehaceres del hogar
-          11 otra razón
 Variable: p314a_18 — Etiqueta: p314a
 p314a:
            1 si
@@ -211,18 +187,6 @@ p4194:
 Variable: p4195_18 — Etiqueta: p4195
 p4195:
            1 seguro integral de salud (sis)
-           2 no
-Variable: p4196_18 — Etiqueta: p4196
-p4196:
-           1 seguro universitario
-           2 no
-Variable: p4197_18 — Etiqueta: p4197
-p4197:
-           1 seguro escolar privado
-           2 no
-Variable: p4198_18 — Etiqueta: p4198
-p4198:
-           1 otro
            2 no
 Variable: p101_18 — Etiqueta: p101
 p101:
@@ -318,14 +282,6 @@ Variable: p1144_18 — Etiqueta: p1144
 p1144:
            0 pase
            1 internet
-Variable: estrsocial_18 — Etiqueta: estrsocial
-estrsocial:
-           1 a
-           2 b
-           3 c
-           4 d
-           5 e
-           6 rural
 Variable: pobreza_18 — Etiqueta: pobreza
 pobreza:
            1 pobre extremo
@@ -334,5 +290,5 @@ pobreza:
       name:  <unnamed>
        log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2018-2019.dta.log
   log type:  text
- closed on:  18 Sep 2025, 19:27:44
------------------------------------------------------------------------------------------------------------------------
+ closed on:  20 Sep 2025, 20:01:47
+---------------------------------------------------------------------------------------------------------

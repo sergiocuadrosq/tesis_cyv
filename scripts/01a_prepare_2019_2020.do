@@ -20,7 +20,9 @@ use "enaho01-2019-2023-100-panel.dta"
 
 keep if hpanel_19_20==1
 
-keep conglome_19 vivienda_19 hogar_19 p101_19 p102_19 p103_19 p103a_19 p104_19 p104a_19 p105a_19 p105b_19 p106_19 p106b_19 p107b1_19 p110_19 p110a1_19 p111a_19 p112a_19 p1144_19 p1142_19
+keep conglome_19 vivienda_19 hogar_19 p101_19 p102_19 p103_19 p103a_19 p104_19 p104a_19 p105a_19 p105b_19 p106_19 p106a_19  p110_19 p110a1_19 p111a_19 p112a_19 p1144_19 p1142_19
+
+// p107b1_19
 
 save "$processed/2019-2020/2019-2020_100.dta", replace
 

@@ -1,8 +1,8 @@
------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2015-2016.dta.log
   log type:  text
- opened on:  18 Sep 2025, 19:27:44
+ opened on:  20 Sep 2025, 20:01:47
 ============================================
 👉 Revisando etiquetas en: 2015-2016.dta
 ============================================
@@ -69,21 +69,10 @@ Variable: p521c_15 — Etiqueta: p521c
 p521c:
            1 si
            2 no
-Variable: p524a2_15 — Etiqueta: p524a2
-p524a2:
-           1 no sabe
 Variable: p528_15 — Etiqueta: p528
 p528:
            1 si
            2 no
-Variable: p530b_15 — Etiqueta: p530b
-p530b:
-           1 no sabe/no tiene ganancia
-Variable: p535_15 — Etiqueta: p535
-p535:
-           1 si
-           2 no
-           3 no corresponde
 Variable: p558c_15 — Etiqueta: p558c
 p558c:
            1 quechua
@@ -146,19 +135,6 @@ Variable: p307_15 — Etiqueta: p307
 p307:
            1 si
            2 no
-Variable: p313_15 — Etiqueta: p313
-p313:
-           1 problemas económicos
-           2 estoy trabajando
-           3 terminó sus estudios: secundarios/ superiores /asiste a academia preuniversitaria
-           4 no tiene la edad suficiente
-           5 problemas familiares
-           6 de vacaciones
-           7 no existe centro de educación básica o superior en el centro poblado
-           8 asiste a un centro de educación técnico productivo
-           9 no me interesa/no me gusta el estudio
-          10 se dedica a los quehaceres del hogar
-          11 otra razón
 Variable: p314a_15 — Etiqueta: p314a
 p314a:
            1 si
@@ -204,18 +180,6 @@ p4194:
 Variable: p4195_15 — Etiqueta: p4195
 p4195:
            1 seguro integral de salud
-           2 no
-Variable: p4196_15 — Etiqueta: p4196
-p4196:
-           1 seguro universitario
-           2 no
-Variable: p4197_15 — Etiqueta: p4197
-p4197:
-           1 seguro escolar privado
-           2 no
-Variable: p4198_15 — Etiqueta: p4198
-p4198:
-           1 otro
            2 no
 Variable: p101_15 — Etiqueta: p101
 p101:
@@ -315,16 +279,8 @@ pobreza:
            1 pobre extremo
            2 pobre no extremo
            3 no pobre
-Variable: estrsocial_15 — Etiqueta: estrsocial
-estrsocial:
-           1 a
-           2 b
-           3 c
-           4 d
-           5 e
-           6 rural
       name:  <unnamed>
        log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2015-2016.dta.log
   log type:  text
- closed on:  18 Sep 2025, 19:27:44
------------------------------------------------------------------------------------------------------------------------
+ closed on:  20 Sep 2025, 20:01:47
+---------------------------------------------------------------------------------------------------------

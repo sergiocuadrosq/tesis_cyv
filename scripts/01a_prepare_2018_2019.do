@@ -20,7 +20,9 @@ use "enaho01-2018-2022-100-panel.dta"
 
 keep if hpan1819==1
 
-keep conglome_18 vivienda_18 hogar_18 p101_18 p102_18 p103_18 p103a_18 p104_18 p104a_18 p105a_18 p105b_18 p106_18 p106b_18 p107b1_18 p110_18 p110a1_18 p111a_18 p112a_18 p1144_18 p1142_18
+keep conglome_18 vivienda_18 hogar_18 p101_18 p102_18 p103_18 p103a_18 p104_18 p104a_18 p105a_18 p105b_18 p106_18 p106a_18  p110_18 p110a1_18 p111a_18 p112a_18 p1144_18 p1142_18
+
+//p107b1_18
 
 save "$processed/2018-2019/2018-2019_100.dta", replace
 

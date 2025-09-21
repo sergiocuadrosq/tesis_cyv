@@ -20,8 +20,10 @@ use "enaho01-2016-2020-100-panel.dta"
 keep if hpanel1617 == 1
 
 keep conglome_16 vivienda_16 hogar_16 p101_16 p102_16 p103_16 p103a_16 p104_16 p104a_16 ///
-     p105a_16 p105b_16 p106_16 p106b_16 p107b1_16 p110_16 p110a1_16 p111a_16 p112a_16 ///
+     p105a_16 p105b_16 p106_16 p106a_16  p110_16 p110a1_16 p111a_16 p112a_16 ///
      p1144_16 p1142_16
+	 
+	 // p107b1_16
 
 save "$processed/2016-2017/2016-2017_100.dta", replace
 

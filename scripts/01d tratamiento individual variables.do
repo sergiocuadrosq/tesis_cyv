@@ -13,7 +13,7 @@ cd "$final"
 use "panel_apilado.dta"
 
 
-////////////////
+//////// Codificación de variable objetivo (y descarte de condiciones no necesarias)
 
 
 gen status_inf = .
@@ -28,9 +28,12 @@ label values status_inf status_inf_labels
 
 keep if status_inf==0 | status_inf==1
 
-/////////////////////
+//////////////////// Renaming /////////////////////
 
-
+rename conglome_t1 conglome
+rename vivienda_t1 vivienda
+rename hogar_t1 hogar
+rename codperso_t1 codperso
 rename p207_t1 sexo
 rename p208a_t1 edad
 rename p209_t1 estadocivil
@@ -74,10 +77,8 @@ rename p103a_t1 materialtechos
 rename p104_t1 habitaciones
 rename p104a_t1 habitacionesdormir
 rename p105a_t1 vivienda_status
-rename p105b_t1 monto_alquiler_compra_vivienda
-rename p106_t1 monto_alquiler_cree
-rename p106b_t1 viviendasunarp
-rename p107b1_t1 credito_vivienda
+rename p106b_t1 viviendatitulo
+// rename p107b1_t1 credito_vivienda
 rename p110_t1 agua_procedencia
 rename p110a1_t1 agua_potable
 rename p111a_t1 conexionsshh
@@ -88,11 +89,48 @@ rename percepho_t1 personas_ingresos
 rename mieperho_t1 personas_hogar
 rename pobreza_t1 pobreza
 
-////////////////////////////
+////////////////////////////////////////////////////////
+////////////////Tratamiento individual//////////////////
+////////////////////////////////////////////////////////
 
+//
 
 gen tiempotrabajo = p513a1_t1 + (p513a2_t1/12) 
 drop p513a1_t1 p513a2_t1
 
+//
 
 replace trabajopara = 99 if categoria_trabajador == 2 & trabajopara == .
+
+//
+
+replace antepasadosconsidera = 7 if antepasadosconsidera == 9
+
+//
+
+drop if viviadistrito ==3
+
+//
+
+replace conexionsshh = 7 if conexionsshh == 9
+replace conexionsshh = 7 if conexionsshh == 8
+
+//
+
+replace agua_potable = 99 if (agua_procedencia != 1 & agua_procedencia != 2 & agua_procedencia != 3)
+
+//
+
+replace agua_procedencia = 7 if agua_procedencia==8
+
+//
+
+egen alquiler = rowtotal(p105b_t1 p106_t1)
+drop p105b_t1 p106_t1
+
+//
+
+replace numpersonastrabajo = 99 if trabajopara==1
+
+
+
