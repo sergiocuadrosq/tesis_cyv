@@ -35,7 +35,9 @@ keep if perpanel1415 == 1
 drop if codperso_14 == ""
 
 keep conglome_14 vivienda_14 hogar_14 codperso_14 p300a_14 p301a_14 p302_14 p307_14 ///
-     p313_14 p314a_14
+      p314a_14
+	 
+	 // p313_14
 
 save "$processed/2014-2015/2014-2015_300.dta", replace
 
@@ -49,7 +51,9 @@ drop if codperso_14 == ""
 
 keep conglome_14 vivienda_14 hogar_14 codperso_14 p401f_14 p401_14 p4021_14 p4022_14 ///
      p4023_14 p4024_14 p4025_14 p4191_14 p4192_14 p4193_14 p4194_14 p4195_14 ///
-     p4196_14 p4197_14 p4198_14
+     
+	 
+	 /// p4196_14 p4197_14 p4198_14
 
 save "$processed/2014-2015/2014-2015_400.dta", replace
 
@@ -63,8 +67,10 @@ drop if codperso_14 == ""
 
 keep ocupinf_14 ocupinf_15 conglome_14 vivienda_14 hogar_14 codperso_14 p207_14 p208a_14 ///
      p209_14 p501_14 p507_14 p510_14 p510a1_14 p510b_14 p511a_14 p512a_14 p513t_14 ///
-     p513a1_14 p513a2_14 p514_14 p519_14 p520_14 p521a_14 p521c_14 p524a1_14 p524a2_14 ///
-     p528_14 p530a_14 p530b_14 p535_14 p558c_14 p558d_14
+     p513a1_14 p513a2_14 p514_14 p519_14 p520_14 p521a_14 p521c_14 ///
+     p528_14  p558c_14 p558d_14
+	 
+// p524a1_14 p524a2_14 p530a_14 p530b_14 p535_14
 
 save "$processed/2014-2015/2014-2015_500.dta", replace
 
@@ -106,6 +112,5 @@ merge m:1 conglome_14 vivienda_14 hogar_14 using "2014-2015_sumaria.dta"
 keep if _merge==3
 drop _merge
 
-GORDO JOSUE 
 
 save "$processed/2014-2015.dta", replace

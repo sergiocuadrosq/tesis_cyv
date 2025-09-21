@@ -1,9 +1,8 @@
---------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2019-2020.
-> dta.log
+       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2019-2020.dta.log
   log type:  text
- opened on:  23 Jun 2025, 20:04:14
+ opened on:  18 Sep 2025, 19:27:44
 ============================================
 👉 Revisando etiquetas en: 2019-2020.dta
 ============================================
@@ -42,8 +41,7 @@ p510:
            7 otra
 Variable: p510a1_19 — Etiqueta: p510a1
 p510a1:
-           1 persona jurídica (sociedad anónima; srl; sociedad civil; eirl
-> ; fundación ó asociación, etc.)
+           1 persona jurídica (sociedad anónima; srl; sociedad civil; eirl; fundación ó asociación, etc.)
            2 persona natural (con ruc, rus, rer, u otro régimen)
            3 no esta registrado (no tiene ruc)
 Variable: p510b_19 — Etiqueta: p510b
@@ -55,10 +53,8 @@ p511a:
            1 contrato indefinido, nombrado, permanente
            2 contrato a plazo fijo (sujeto a modalidad)
            3 está en período de prueba
-           4 convenios de formación laboral juvenil /prácticas pre-profesi
-> oanles
-           5 contrato por locación de servicios (honorarios profesionales,
->  ruc), snp
+           4 convenios de formación laboral juvenil /prácticas pre-profesioanles
+           5 contrato por locación de servicios (honorarios profesionales, ruc), snp
            6 regimen especial de contratación administrativa (cas)
            7 sin contrato
            8 otro
@@ -157,13 +153,11 @@ Variable: p313_19 — Etiqueta: p313
 p313:
            1 problemas económicos
            2 estoy trabajando
-           3 terminó sus estudios: secundarios/ superiores /asiste a acade
-> mia preuniversitaria
+           3 terminó sus estudios: secundarios/ superiores /asiste a academia preuniversitaria
            4 no tiene la edad suficiente (para el grupo 3-5 años)
            5 problemas familiares
            6 de vacaciones
-           7 no existe centro de educación básica o superior en el centro 
-> poblado
+           7 no existe centro de educación básica o superior en el centro poblado
            8 asiste a un centro de educación técnico productiva
            9 no me interesa/no me gusta el estudio
           10 se dedica a los quehaceres del hogar
@@ -304,8 +298,7 @@ p110a1:
 Variable: p111a_19 — Etiqueta: p111a
 p111a:
            1 red pública de desagüe dentro de la vivienda
-           2 red pública de desagüe fuera de la vivienda pero dentro del e
-> dificio
+           2 red pública de desagüe fuera de la vivienda pero dentro del edificio
            3 letrina (con tratamiento)
            4 pozo séptico, tanque septico o biodigestor
            5 pozo ciego o negro
@@ -339,8 +332,7 @@ pobreza:
            2 pobre no extremo
            3 no pobre
       name:  <unnamed>
-       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2019-2020.
-> dta.log
+       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2019-2020.dta.log
   log type:  text
- closed on:  23 Jun 2025, 20:04:15
---------------------------------------------------------------------------
+ closed on:  18 Sep 2025, 19:27:44
+-----------------------------------------------------------------------------------------------------------------------

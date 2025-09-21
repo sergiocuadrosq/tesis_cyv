@@ -34,7 +34,9 @@ use "enaho01a-2017-2021-300-panel.dta"
 keep if perpanel1718 == 1
 
 keep conglome_17 vivienda_17 hogar_17 codperso_17 p300a_17 p301a_17 p302_17 p307_17 ///
-     p313_17 p314a_17
+      p314a_17
+	 
+	 // p313_17
 
 save "$processed/2017-2018/2017-2018_300.dta", replace
 
@@ -47,7 +49,9 @@ keep if perpanel1718 == 1
 
 keep conglome_17 vivienda_17 hogar_17 codperso_17 p401f_17 p401_17 p4021_17 p4022_17 ///
      p4023_17 p4024_17 p4025_17 p4191_17 p4192_17 p4193_17 p4194_17 p4195_17 ///
-     p4196_17 p4197_17 p4198_17
+     
+	 
+	 ///p4196_17 p4197_17 p4198_17
 	 
 save "$processed/2017-2018/2017-2018_400.dta", replace
 
@@ -60,8 +64,10 @@ keep if perpanel1718 == 1
 
 keep ocupinf_17 ocupinf_18 conglome_17 vivienda_17 hogar_17 codperso_17 p207_17 p208a_17 ///
      p209_17 p501_17 p507_17 p510_17 p510a1_17 p510b_17 p511a_17 p512a_17 p513t_17 ///
-     p513a1_17 p513a2_17 p514_17 p519_17 p520_17 p521a_17 p521c_17 p524a1_17 p524a2_17 ///
-     p528_17 p530a_17 p530b_17 p535_17 p558c_17 p558d_17
+     p513a1_17 p513a2_17 p514_17 p519_17 p520_17 p521a_17 p521c_17  ///
+     p528_17 p558c_17 p558d_17
+	 
+	 /// p524a1_17 p524a2_17 p530a_17 p530b_17 p535_17
 
 save "$processed/2017-2018/2017-2018_500.dta", replace
 
@@ -72,9 +78,9 @@ use "sumaria-2017-2021-panel.dta"
 
 keep if hpanel_1718 == 1
 
-keep conglome_17 vivienda_17 hogar_17 mieperho_17 percepho_17 ingbruhd_17 ingindhd_17 ///
-     insedthd_17 ingseihd_17 ingtexhd_17 ingexthd_17 ingtrahd_17 ingrenhd_17 ingmo1hd_17 ///
-     inghog1d_17 gashog1d_17 estrsocial_17 linea_17 pobreza_17
+keep conglome_17 vivienda_17 hogar_17 mieperho_17 percepho_17 pobreza_17
+	 
+	 //// estrsocial_17 linea_17 ingbruhd_17 ingindhd_17 /// insedthd_17 ingseihd_17 ingtexhd_17 ingexthd_17 ingtrahd_17 ingrenhd_17 ingmo1hd_17 /// inghog1d_17 gashog1d_17  
 
 save "$processed/2017-2018/2017-2018_sumaria.dta", replace
 

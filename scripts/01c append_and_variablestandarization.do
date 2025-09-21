@@ -61,23 +61,9 @@ foreach x of local archivos {
     }
 }
 
-gen status_inf = .
-replace status_inf=0 if ocupinf_t1==2 & ocupinf_t2==2
-replace status_inf=1 if ocupinf_t1==2 & ocupinf_t2==1
-replace status_inf=2 if ocupinf_t1==1 & ocupinf_t2==2
-replace status_inf=3 if ocupinf_t1==1 & ocupinf_t2==1
-
-label define status_inf_labels 1 "Cae en informalidad" 3 "Se mantiene informal" 0 "Se mantiene formal" 2 "Cambia a formal" 
-
-label values status_inf status_inf_labels
-
-keep if status_inf==0 | status_inf==1
-
-
 * Guardar el dataset combinado
-save "$final/panel_final_combined_data.dta", replace
+save "$final/panel_apilado.dta", replace
 
-export delimited using "panel_final_combined_data_nolables.csv", replace nolabel
 
 
 

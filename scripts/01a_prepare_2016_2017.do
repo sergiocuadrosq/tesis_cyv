@@ -33,7 +33,9 @@ use "enaho01a-2016-2020-300-panel.dta"
 keep if perpanel1617 == 1
 
 keep conglome_16 vivienda_16 hogar_16 codperso_16 p300a_16 p301a_16 p302_16 p307_16 ///
-     p313_16 p314a_16
+      p314a_16
+	 
+	 // p313_16
 
 save "$processed/2016-2017/2016-2017_300.dta", replace
 
@@ -46,7 +48,8 @@ keep if perpanel1617 == 1
 
 keep conglome_16 vivienda_16 hogar_16 codperso_16 p401f_16 p401_16 p4021_16 p4022_16 ///
      p4023_16 p4024_16 p4025_16 p4191_16 p4192_16 p4193_16 p4194_16 p4195_16 ///
-     p4196_16 p4197_16 p4198_16
+	 
+	 ///     p4196_16 p4197_16 p4198_16
 
 save "$processed/2016-2017/2016-2017_400.dta", replace
 
@@ -59,8 +62,10 @@ keep if perpanel1617 == 1
 
 keep ocupinf_16 ocupinf_17 conglome_16 vivienda_16 hogar_16 codperso_16 p207_16 p208a_16 ///
      p209_16 p501_16 p507_16 p510_16 p510a1_16 p510b_16 p511a_16 p512a_16 p513t_16 ///
-     p513a1_16 p513a2_16 p514_16 p519_16 p520_16 p521a_16 p521c_16 p524a1_16 p524a2_16 ///
-     p528_16 p530a_16 p530b_16 p535_16 p558c_16 p558d_16
+     p513a1_16 p513a2_16 p514_16 p519_16 p520_16 p521a_16 p521c_16  ///
+     p528_16   p558c_16 p558d_16
+	 
+	 /// p524a1_16 p524a2_16 p530a_16 p530b_16 p535_16
 
 save "$processed/2016-2017/2016-2017_500.dta", replace
 

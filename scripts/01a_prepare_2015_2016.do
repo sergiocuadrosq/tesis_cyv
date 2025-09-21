@@ -35,7 +35,9 @@ keep if perpanel_1516 == 1
 drop if codperso_15==""
 
 keep conglome_15 vivienda_15 hogar_15 codperso_15 p300a_15 p301a_15 p302_15 p307_15 ///
-     p313_15 p314a_15
+      p314a_15
+	 
+	 // p313_15
 
 save "$processed/2015-2016/2015-2016_300.dta", replace
 
@@ -50,7 +52,8 @@ drop if codperso_15==""
 
 keep conglome_15 vivienda_15 hogar_15 codperso_15 p401f_15 p401_15 p4021_15 p4022_15 ///
      p4023_15 p4024_15 p4025_15 p4191_15 p4192_15 p4193_15 p4194_15 p4195_15 ///
-     p4196_15 p4197_15 p4198_15
+	 
+	 // p4196_15 p4197_15 p4198_15
 
 save "$processed/2015-2016/2015-2016_400.dta", replace
 
@@ -65,8 +68,10 @@ drop if codperso_15==""
 
 keep ocupinf_15 ocupinf_16 conglome_15 vivienda_15 hogar_15 codperso_15 p207_15 p208a_15 ///
      p209_15 p501_15 p507_15 p510_15 p510a1_15 p510b_15 p511a_15 p512a_15 p513t_15 ///
-     p513a1_15 p513a2_15 p514_15 p519_15 p520_15 p521a_15 p521c_15 p524a1_15 p524a2_15 ///
-     p528_15 p530a_15 p530b_15 p535_15 p558c_15 p558d_15
+     p513a1_15 p513a2_15 p514_15 p519_15 p520_15 p521a_15 p521c_15 ///
+     p528_15  p558c_15 p558d_15
+	 
+	 /// p524a1_15 p524a2_15 p530a_15 p530b_15 p535_15
 
 save "$processed/2015-2016/2015-2016_500.dta", replace
 

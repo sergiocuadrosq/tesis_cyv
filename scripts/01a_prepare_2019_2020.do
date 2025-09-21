@@ -31,7 +31,9 @@ use "enaho01a-2019-2023-300-panel.dta"
 
 keep if perpanel_19_20==1
 
-keep conglome_19 vivienda_19 hogar_19 codperso_19 p300a_19 p301a_19 p302_19 p307_19 p313_19 p314a_19
+keep conglome_19 vivienda_19 hogar_19 codperso_19 p300a_19 p301a_19 p302_19 p307_19  p314a_19
+
+/// p313_19
 
 save "$processed/2019-2020/2019-2020_300.dta", replace
 
@@ -41,7 +43,9 @@ use "enaho01a-2019-2023-400-panel.dta"
 
 keep if perpanel_19_20==1
 
-keep conglome_19 vivienda_19 hogar_19 codperso_19 p401f_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 p4191_19 p4192_19 p4193_19 p4194_19 p4195_19 p4196_19 p4197_19 p4198_19
+keep conglome_19 vivienda_19 hogar_19 codperso_19 p401f_19 p401_19 p4021_19 p4022_19 p4023_19 p4024_19 p4025_19 p4191_19 p4192_19 p4193_19 p4194_19 p4195_19 
+
+//// p4196_19 p4197_19 p4198_19
 
 save "$processed/2019-2020/2019-2020_400.dta", replace
 
@@ -52,7 +56,9 @@ use "enaho01a-2019-2023-500-panel.dta"
 
 keep if perpanel_19_20==1
 
-keep ocupinf_19 ocupinf_20 conglome_19 vivienda_19 hogar_19 codperso_19 p207_19 p208a_19 p209_19 p501_19 p507_19 p510_19 p510a1_19 p510b_19 p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 p514_19 p519_19 p520_19 p521a_19 p521c_19 p524a1_19 p524a2_19 p528_19 p530a_19 p530b_19 p535_19 p558c_19 p558d_19
+keep ocupinf_19 ocupinf_20 conglome_19 vivienda_19 hogar_19 codperso_19 p207_19 p208a_19 p209_19 p501_19 p507_19 p510_19 p510a1_19 p510b_19 p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 p514_19 p519_19 p520_19 p521a_19 p521c_19  p528_19 p558c_19 p558d_19
+
+/// p524a1_19 p524a2_19 p530a_19 p530b_19 p535_19
 
 save "$processed/2019-2020/2019-2020_500.dta", replace
 

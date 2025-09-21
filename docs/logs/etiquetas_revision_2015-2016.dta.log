@@ -1,9 +1,8 @@
---------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2015-2016.
-> dta.log
+       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2015-2016.dta.log
   log type:  text
- opened on:  23 Jun 2025, 20:04:14
+ opened on:  18 Sep 2025, 19:27:44
 ============================================
 👉 Revisando etiquetas en: 2015-2016.dta
 ============================================
@@ -30,8 +29,7 @@ p510:
            7 otra
 Variable: p510a1_15 — Etiqueta: p510a1
 p510a1:
-           1 persona jurídica (sociedad anónima; srl; sociedad civil; eirl
-> ; fundación ó asociación, etc.)
+           1 persona jurídica (sociedad anónima; srl; sociedad civil; eirl; fundación ó asociación, etc.)
            2 persona natural (con r.u.c., rus, rer, u otro régimen)
            3 no esta registrado (no tiene ruc)
 Variable: p510b_15 — Etiqueta: p510b
@@ -44,8 +42,7 @@ p511a:
            2 contrato a plazo fijo
            3 esta en periodo de prueba
            4 convenios de formacion laboral juvenil
-           5 contrato por locación de servicios (honorarios profesionales,
->  ruc) snp
+           5 contrato por locación de servicios (honorarios profesionales, ruc) snp
            6 régimes especial de contratación administrativa (cas)
            7 sin contrato
            8 otro
@@ -153,13 +150,11 @@ Variable: p313_15 — Etiqueta: p313
 p313:
            1 problemas económicos
            2 estoy trabajando
-           3 terminó sus estudios: secundarios/ superiores /asiste a acade
-> mia preuniversitaria
+           3 terminó sus estudios: secundarios/ superiores /asiste a academia preuniversitaria
            4 no tiene la edad suficiente
            5 problemas familiares
            6 de vacaciones
-           7 no existe centro de educación básica o superior en el centro 
-> poblado
+           7 no existe centro de educación básica o superior en el centro poblado
            8 asiste a un centro de educación técnico productivo
            9 no me interesa/no me gusta el estudio
           10 se dedica a los quehaceres del hogar
@@ -295,8 +290,7 @@ p110a1:
 Variable: p111a_15 — Etiqueta: p111a
 p111a:
            1 red pública de desagüe dentro de la vivienda
-           2 red pública de desagüe fuera de la vivienda pero dentro del e
-> dificio
+           2 red pública de desagüe fuera de la vivienda pero dentro del edificio
            3 letrina
            4 pozo séptico
            5 pozo ciego o negro
@@ -330,8 +324,7 @@ estrsocial:
            5 e
            6 rural
       name:  <unnamed>
-       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2015-2016.
-> dta.log
+       log:  C:\projects\tesis_cyv/docs/logs/etiquetas_revision_2015-2016.dta.log
   log type:  text
- closed on:  23 Jun 2025, 20:04:14
---------------------------------------------------------------------------
+ closed on:  18 Sep 2025, 19:27:44
+-----------------------------------------------------------------------------------------------------------------------
