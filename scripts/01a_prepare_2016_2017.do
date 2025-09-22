@@ -34,10 +34,10 @@ use "enaho01a-2016-2020-300-panel.dta"
 
 keep if perpanel1617 == 1
 
-keep conglome_16 vivienda_16 hogar_16 codperso_16 p300a_16 p301a_16 p302_16 p307_16 ///
+keep conglome_16 vivienda_16 hogar_16 codperso_16 p300a_16 p301a_16 p306_16 ///
       p314a_16
 	 
-	 // p313_16
+	 // p313_16 p302_16
 
 save "$processed/2016-2017/2016-2017_300.dta", replace
 
@@ -60,14 +60,19 @@ save "$processed/2016-2017/2016-2017_400.dta", replace
 clear
 use "enaho01a-2016-2020-500-panel01.dta"
 
+merge 1:1 conglome vivienda numper using "enaho01a-2016-2020-500-panel02.dta"
+
+keep if _merge==3
+drop _merge
+
 keep if perpanel1617 == 1
 
 keep ocupinf_16 ocupinf_17 conglome_16 vivienda_16 hogar_16 codperso_16 p207_16 p208a_16 ///
-     p209_16 p501_16 p507_16 p510_16 p510a1_16 p510b_16 p511a_16 p512a_16 p513t_16 ///
-     p513a1_16 p513a2_16 p514_16 p519_16 p520_16 p521a_16 p521c_16  ///
-     p528_16   p558c_16 p558d_16
+     p209_16 p501_16 p507_16 p509_16 p510_16 p510a1_16 p510b_16 p511a_16 p512a_16 p513t_16 ///
+     p513a1_16 p513a2_16 p514_16 p518_16 p519_16 p520_16 p521_16 p521c_16  ///
+        p558c_16 p558d_16 i524a1_16 d529t_16 i530a_16 d536_16 i538a1_16 d540t_16 i541a_16 d543_16 d544t_16 i538a1_16 d538a1_16
 	 
-	 /// p524a1_16 p524a2_16 p530a_16 p530b_16 p535_16
+	 /// p524a1_16 p524a2_16 p530a_16 p530b_16 p535_16 p528_16
 
 save "$processed/2016-2017/2016-2017_500.dta", replace
 

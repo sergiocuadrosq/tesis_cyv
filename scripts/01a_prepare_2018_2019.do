@@ -33,9 +33,9 @@ use "enaho01a-2018-2022-300-panel.dta"
 
 keep if perpanel1819==1
 
-keep conglome_18 vivienda_18 hogar_18 codperso_18 p300a_18 p301a_18 p302_18 p307_18  p314a_18
+keep conglome_18 vivienda_18 hogar_18 codperso_18 p300a_18 p301a_18 p306_18  p314a_18
 
-//  p313_18
+//  p313_18 p302_18
 
 save "$processed/2018-2019/2018-2019_300.dta", replace
 
@@ -58,9 +58,10 @@ use "enaho01a-2018-2022-500-panel.dta"
 
 keep if perpanel1819==1
 
-keep ocupinf_18 ocupinf_19 conglome_18 vivienda_18 hogar_18 codperso_18 p207_18 p208a_18 p209_18 p501_18 p507_18 p510_18 p510a1_18 p510b_18 p511a_18 p512a_18 p513t_18 p513a1_18 p513a2_18 p514_18 p519_18 p520_18 p521a_18 p521c_18  p528_18 p558c_18 p558d_18
+keep ocupinf_18 ocupinf_19 conglome_18 vivienda_18 hogar_18 codperso_18 p207_18 p208a_18 p209_18 p501_18 p507_18 p509_18 p510_18 p510a1_18 p510b_18 p511a_18 p512a_18 p513t_18 p513a1_18 p513a2_18 p514_18 p518_18 p519_18 p520_18 p521_18 p521c_18 p558c_18 p558d_18 ///
+i524a1_18 d529t_18 i530a_18 d536_18 i538a1_18 d540t_18 i541a_18 d543_18 d544t_18 i538a1_18 d538a1_18
 
-/// p524a1_18 p524a2_18 p530a_18 p530b_18 p535_18
+/// p524a1_18 p524a2_18 p530a_18 p530b_18 p535_18 p528_18
 
 save "$processed/2018-2019/2018-2019_500.dta", replace
 

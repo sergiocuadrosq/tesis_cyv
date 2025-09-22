@@ -36,10 +36,10 @@ use "enaho01a-2014-2018-300-panel.dta"
 keep if perpanel1415 == 1
 drop if codperso_14 == ""
 
-keep conglome_14 vivienda_14 hogar_14 codperso_14 p300a_14 p301a_14 p302_14 p307_14 ///
+keep conglome_14 vivienda_14 hogar_14 codperso_14 p300a_14 p301a_14 p306_14 ///
       p314a_14
 	 
-	 // p313_14
+	 // p313_14 p302_14
 
 save "$processed/2014-2015/2014-2015_300.dta", replace
 
@@ -68,11 +68,12 @@ keep if perpanel1415 == 1
 drop if codperso_14 == ""
 
 keep ocupinf_14 ocupinf_15 conglome_14 vivienda_14 hogar_14 codperso_14 p207_14 p208a_14 ///
-     p209_14 p501_14 p507_14 p510_14 p510a1_14 p510b_14 p511a_14 p512a_14 p513t_14 ///
-     p513a1_14 p513a2_14 p514_14 p519_14 p520_14 p521a_14 p521c_14 ///
-     p528_14  p558c_14 p558d_14
+     p209_14 p501_14 p507_14 p509_14 p510_14 p510a1_14 p510b_14 p511a_14 p512a_14 p513t_14 ///
+     p513a1_14 p513a2_14 p514_14 p518_14 p519_14 p520_14 p521_14 p521c_14 ///
+	 p558c_14 p558d_14 ///
+	 i524a1_14 d529t_14 i530a_14 d536_14 i538a1_14 d540t_14 i541a_14 d543_14 d544t_14 i538a1_14 d538a1_14
 	 
-// p524a1_14 p524a2_14 p530a_14 p530b_14 p535_14
+// p524a1_14 p524a2_14 p530a_14 p530b_14 p535_14 p528_14
 
 save "$processed/2014-2015/2014-2015_500.dta", replace
 

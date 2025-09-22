@@ -44,19 +44,20 @@ rename p510a1_t1 registrosunat
 rename p510b_t1 cuentassunat
 rename p511a_t1 tipocontrato
 rename p512a_t1 numpersonastrabajo
-rename p513t_t1 horas_ocup_prin
 rename p514_t1 tuvootrotrabajo
 rename p519_t1 normtrabaja
 rename p520_t1 horas_normtrabaja
-rename p521a_t1 disponibletrabajar
+rename p521_t1 disponiblehorastrabajar
+//rename p521a_t1 disponibletrabajar
 rename p521c_t1 deseaotrotrabajo
-rename p528_t1 recibiopagoespecie
+// rename p528_t1 recibiopagoespecie
 rename p558c_t1 antepasadosconsidera
 rename p558d_t1 perteneceindig
 rename p300a_t1 lenguamaterna
 rename p301a_t1 niveleduc
-rename p302_t1 leerescribir
-rename p307_t1 asiste_educ
+// rename p302_t1 leerescribir
+rename p306_t1 asiste_educ
+// rename p307_t1 asiste_educ
 rename p314a_t1 usointernet
 rename p401f_t1 viviadistrito
 rename p401_t1 padece_enfer
@@ -77,7 +78,7 @@ rename p103a_t1 materialtechos
 rename p104_t1 habitaciones
 rename p104a_t1 habitacionesdormir
 rename p105a_t1 vivienda_status
-rename p106b_t1 viviendatitulo
+rename p106a_t1 viviendatitulo
 // rename p107b1_t1 credito_vivienda
 rename p110_t1 agua_procedencia
 rename p110a1_t1 agua_potable
@@ -100,7 +101,9 @@ drop p513a1_t1 p513a2_t1
 
 //
 
-replace trabajopara = 99 if categoria_trabajador == 2 & trabajopara == .
+replace trabajopara = 99 if categoria_trabajador == 6 & trabajopara == .
+replace trabajopara = 99 if p509_t1!=.
+drop p509_t1
 
 //
 
@@ -132,5 +135,50 @@ drop p105b_t1 p106_t1
 
 replace numpersonastrabajo = 99 if trabajopara==1
 
+// 	
 
+replace registrosunat = 99 if (trabajopara==1 | trabajopara==2 |trabajopara==3 | categoria_trabajador==6)
 
+//
+
+replace cuentassunat = 99 if (trabajopara==1 | trabajopara==2 |trabajopara==3 | categoria_trabajador==6)
+
+//
+
+replace tipocontrato = 1 if trabajopara==1
+replace tipocontrato = 99 if categoria_trabajador == 1
+replace tipocontrato = 99 if categoria_trabajador ==2
+
+//
+
+replace lenguamaterna = 8 if lenguamaterna==9 
+
+//
+
+drop if niveleduc == 12
+
+//
+
+replace viviendatitulo = 99 if vivienda_status==1
+replace viviendatitulo = 99 if vivienda_status==5
+replace viviendatitulo = 99 if vivienda_status==6
+replace viviendatitulo = 99 if vivienda_status==7
+
+//
+
+egen horastotales_sempasada = rowtotal(p513t_t1 p518_t1)
+drop p513t_t1 p518_t1
+
+replace horas_normtrabaja=horastotales_sempasada if horas_normtrabaja==.
+
+//
+
+replace deseaotrotrabajo = 99 if categoria_trabajador==5
+
+///
+
+egen ingtrabw = rowtotal(i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1)
+drop i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1
+
+save "final_dataset.dta",replace
+export delimited using "final_dataset.csv", replace nolabel
