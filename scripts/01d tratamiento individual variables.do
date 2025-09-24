@@ -38,6 +38,7 @@ rename p207_t1 sexo
 rename p208a_t1 edad
 rename p209_t1 estadocivil
 rename p501_t1 tuvotrabajo
+rename p505_t1 sector_trabajador
 rename p507_t1 categoria_trabajador
 rename p510_t1 trabajopara
 rename p510a1_t1 registrosunat
@@ -71,6 +72,30 @@ rename p4192_t1 seguroprivado
 rename p4193_t1 eps
 rename p4194_t1 seguroffaa
 rename p4195_t1 sis
+rename p4031_t1 puestosalud
+rename p4032_t1 centrosalud
+rename p4033_t1 centroopuesto
+rename p4034_t1 posta
+rename p4035_t1 hospital_minsa
+rename p4036_t1 hospital_seguro
+rename p4037_t1 hospital_ffaa
+rename p4038_t1 consultorio 
+rename p4039_t1 clinica
+rename p40310_t1 farmacia
+rename p40311_t1 domicilio
+rename p40313_t1 otro
+rename p40314_t1 no_busco
+rename p4091_t1 no_dinero
+rename p4092_t1 lejos
+rename p4093_t1 demora_mucho
+rename p4094_t1 noconfia
+rename p4095_t1 nograve
+rename p4096_t1 remedio_caseros
+rename p4097_t1 no_seguro
+rename p4098_t1 autoreceto
+rename p4099_t1 notiempo
+rename p40910_t1 maltrato
+rename p40911_t1 otro_motivo
 rename p101_t1 tipovivienda
 rename p102_t1 materialparedes
 rename p103_t1 materialpisos
@@ -84,6 +109,7 @@ rename p110_t1 agua_procedencia
 rename p110a1_t1 agua_potable
 rename p111a_t1 conexionsshh
 rename p112a_t1 electricidad
+rename p113a_t1 combustible
 rename p1142_t1 celular
 rename p1144_t1 internet
 rename percepho_t1 personas_ingresos
@@ -133,6 +159,36 @@ drop p105b_t1 p106_t1
 
 //
 
+replace puestosalud = 99 if notuvoenf == 1
+replace centrosalud = 99 if notuvoenf == 1
+replace centroopuesto = 99 if notuvoenf == 1
+replace posta = 99 if notuvoenf == 1
+replace hospital_minsa = 99 if notuvoenf == 1
+replace hospital_seguro = 99 if notuvoenf == 1
+replace hospital_ffaa = 99 if notuvoenf == 1
+replace consultorio = 99 if notuvoenf == 1
+replace clinica = 99 if notuvoenf == 1
+replace farmacia = 99 if notuvoenf == 1
+replace domicilio = 99 if notuvoenf == 1
+replace otro = 99 if notuvoenf == 1
+replace no_busco = 99 if notuvoenf == 1
+
+//
+
+replace no_dinero = 99 if  notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace lejos = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace demora_mucho = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace noconfia = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace nograve = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace remedio_caseros = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace no_seguro = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace autoreceto = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace notiempo = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace maltrato = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+replace otro_motivo = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
+
+//
+
 replace numpersonastrabajo = 99 if trabajopara==1
 
 // 	
@@ -179,6 +235,44 @@ replace deseaotrotrabajo = 99 if categoria_trabajador==5
 
 egen ingtrabw = rowtotal(i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1)
 drop i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1
+
+///
+
+*===========================================================
+* Re-codificar p505_t1 en 9 macro-categorías con etiquetas
+*===========================================================
+
+* (Opcional) Guardar copia del original
+clonevar sector_trabajador_orig = sector_trabajador
+
+* Re-codificación directa
+recode sector_trabajador ///
+    11/23   = 1 /// Fuerzas Armadas y Policía
+    100/199 = 2 /// Directivos / Gerentes
+    200/299 = 3 /// Profesionales
+    300/399 = 4 /// Técnicos y nivel medio
+    400/499 = 5 /// Administrativos / Oficina
+    500/699 = 6 /// Servicios y Comercio
+    700/799 = 7 /// Agro y Oficios / Construcción
+    800/899 = 8 /// Operadores y Conductores
+    900/999 = 9 /// Ocupaciones elementales / No calificados
+    .=9      /// cualquier missing se fuerza a categoría 9
+
+* Definir etiquetas de las nuevas categorías
+label define p505macro ///
+1 "FFAA/Policía" ///
+2 "Directivos/Gerentes" ///
+3 "Profesionales" ///
+4 "Técnicos (nivel medio)" ///
+5 "Administrativos/Oficina" ///
+6 "Servicios y Comercio" ///
+7 "Agro y Oficios/Construcción" ///
+8 "Operadores y Conductores" ///
+9 "Elementales/No calificados", replace
+
+* Asignar etiquetas
+label values sector_trabajador p505macro
+label var sector_trabajador "Ocupación principal (9 macro-categorías)"
 
 save "final_dataset.dta",replace
 export delimited using "final_dataset.csv", replace nolabel

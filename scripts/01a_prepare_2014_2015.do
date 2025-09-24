@@ -20,7 +20,7 @@ use "enaho01-2014-2018-100-panel.dta"
 keep if hpan1415 == 1
 
 keep conglome_14 vivienda_14 hogar_14 p101_14 p102_14 p103_14 p103a_14 p104_14 p104a_14 ///
-     p105a_14 p105b_14 p106_14 p106a_14  p110_14 p110a1_14 p111a_14 p112a_14 ///
+     p105a_14 p105b_14 p106_14 p106a_14  p110_14 p110a1_14 p111a_14 p112a_14 p113a_14 ///
      p1144_14 p1142_14
 	 
 	 //p107b1_14
@@ -51,10 +51,13 @@ use "enaho01a-2014-2018-400-panel.dta"
 keep if perpanel1415 == 1
 drop if codperso_14 == ""
 
-keep conglome_14 vivienda_14 hogar_14 codperso_14 p401f_14 p401_14 p4021_14 p4022_14 ///
-     p4023_14 p4024_14 p4025_14 p4191_14 p4192_14 p4193_14 p4194_14 p4195_14 ///
-     
-	 
+keep conglome_14 vivienda_14 hogar_14 codperso_14 ///
+     p401f_14 p401_14 p4021_14 p4022_14 p4023_14 p4024_14 p4025_14 ///
+     p4191_14 p4192_14 p4193_14 p4194_14 p4195_14 ///
+     p4031_14 p4032_14 p4033_14 p4034_14 p4035_14 p4036_14 p4037_14 p4038_14 p4039_14 ///
+     p40310_14 p40311_14 p40313_14 p40314_14 ///
+     p4091_14 p4092_14 p4093_14 p4094_14 p4095_14 p4096_14 ///
+     p4097_14 p4098_14 p4099_14 p40910_14 p40911_14
 	 /// p4196_14 p4197_14 p4198_14
 
 save "$processed/2014-2015/2014-2015_400.dta", replace
@@ -67,13 +70,14 @@ use "enaho01a-2014-2018-500-panel.dta"
 keep if perpanel1415 == 1
 drop if codperso_14 == ""
 
-keep ocupinf_14 ocupinf_15 conglome_14 vivienda_14 hogar_14 codperso_14 p207_14 p208a_14 ///
-     p209_14 p501_14 p507_14 p509_14 p510_14 p510a1_14 p510b_14 p511a_14 p512a_14 p513t_14 ///
+keep ocupinf_14 ocupinf_15 conglome_14 vivienda_14 dominio_14 hogar_14 codperso_14 p207_14 p208a_14 ///
+     p209_14 p501_14 p505_14 p507_14 p509_14 p510_14 p510a1_14 p510b_14 p511a_14 p512a_14 p513t_14 ///
      p513a1_14 p513a2_14 p514_14 p518_14 p519_14 p520_14 p521_14 p521c_14 ///
-	 p558c_14 p558d_14 ///
+	 p558c_14 p558d_14  ///
 	 i524a1_14 d529t_14 i530a_14 d536_14 i538a1_14 d540t_14 i541a_14 d543_14 d544t_14 i538a1_14 d538a1_14
 	 
 // p524a1_14 p524a2_14 p530a_14 p530b_14 p535_14 p528_14
+// dominio_14 p505_14
 
 save "$processed/2014-2015/2014-2015_500.dta", replace
 
