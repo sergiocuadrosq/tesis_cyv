@@ -29,7 +29,7 @@ label values status_inf status_inf_labels
 keep if status_inf==0 | status_inf==1
 
 //////////////////// Renaming /////////////////////
-
+rename dominio_t1 dominio
 rename conglome_t1 conglome
 rename vivienda_t1 vivienda
 rename hogar_t1 hogar
@@ -273,6 +273,8 @@ label define p505macro ///
 * Asignar etiquetas
 label values sector_trabajador p505macro
 label var sector_trabajador "Ocupación principal (9 macro-categorías)"
+
+drop sector_trabajador_orig
 
 save "final_dataset.dta",replace
 export delimited using "final_dataset.csv", replace nolabel
