@@ -10,7 +10,7 @@ set maxvar 10000
 
 cd "$final"
  
-use "panel_apilado.dta"
+use "panel_apilado_v3.dta"
 
 
 //////// Codificación de variable objetivo (y descarte de condiciones no necesarias)
@@ -41,7 +41,7 @@ rename p501_t1 tuvotrabajo
 rename p505_t1 sector_trabajador
 rename p507_t1 categoria_trabajador
 rename p510_t1 trabajopara
-rename p510a1_t1 registrosunat
+rename p510a1_t1 registropersonajuridica
 rename p510b_t1 cuentassunat
 rename p511a_t1 tipocontrato
 rename p512a_t1 numpersonastrabajo
@@ -50,17 +50,17 @@ rename p519_t1 normtrabaja
 rename p520_t1 horas_normtrabaja
 rename p521_t1 disponiblehorastrabajar
 //rename p521a_t1 disponibletrabajar
-rename p521c_t1 deseaotrotrabajo
+// rename p521c_t1 deseaotrotrabajo (eliminada pq en paneles antiguos no aparece)
 // rename p528_t1 recibiopagoespecie
-rename p558c_t1 antepasadosconsidera
-rename p558d_t1 perteneceindig
+// rename p558c_t1 antepasadosconsidera (no aparece paneles antiguos)
+// rename p558d_t1 perteneceindig (no aparece paneles antiguos)
 rename p300a_t1 lenguamaterna
 rename p301a_t1 niveleduc
 // rename p302_t1 leerescribir
 rename p306_t1 asiste_educ
 // rename p307_t1 asiste_educ
 rename p314a_t1 usointernet
-rename p401f_t1 viviadistrito
+// rename p401f_t1 viviadistrito (eliminada no aparece paneles antiguos)
 rename p401_t1 padece_enfer
 rename p4021_t1 sintoma_malestar
 rename p4022_t1 enfermedad
@@ -106,7 +106,7 @@ rename p105a_t1 vivienda_status
 rename p106a_t1 viviendatitulo
 // rename p107b1_t1 credito_vivienda
 rename p110_t1 agua_procedencia
-rename p110a1_t1 agua_potable
+// rename p110a1_t1 agua_potable (eliminada no aparece paneles antiguos)
 rename p111a_t1 conexionsshh
 rename p112a_t1 electricidad
 rename p113a_t1 combustible
@@ -127,17 +127,21 @@ drop p513a1_t1 p513a2_t1
 
 //
 
+replace registropersonajuridica=2 if registropersonajuridica==3
+
+///
+
 replace trabajopara = 99 if categoria_trabajador == 6 & trabajopara == .
 replace trabajopara = 99 if p509_t1!=.
 drop p509_t1
 
 //
 
-replace antepasadosconsidera = 7 if antepasadosconsidera == 9
+//replace antepasadosconsidera = 7 if antepasadosconsidera == 9
 
 //
 
-drop if viviadistrito ==3
+//drop if viviadistrito ==3
 
 //
 
@@ -146,7 +150,7 @@ replace conexionsshh = 7 if conexionsshh == 8
 
 //
 
-replace agua_potable = 99 if (agua_procedencia != 1 & agua_procedencia != 2 & agua_procedencia != 3)
+//replace agua_potable = 99 if (agua_procedencia != 1 & agua_procedencia != 2 & agua_procedencia != 3)
 
 //
 
@@ -193,7 +197,7 @@ replace numpersonastrabajo = 99 if trabajopara==1
 
 // 	
 
-replace registrosunat = 99 if (trabajopara==1 | trabajopara==2 |trabajopara==3 | categoria_trabajador==6)
+replace registropersonajuridica = 99 if (trabajopara==1 | trabajopara==2 |trabajopara==3 | categoria_trabajador==6)
 
 //
 
@@ -229,7 +233,7 @@ replace horas_normtrabaja=horastotales_sempasada if horas_normtrabaja==.
 
 //
 
-replace deseaotrotrabajo = 99 if categoria_trabajador==5
+// replace deseaotrotrabajo = 99 if categoria_trabajador==5
 
 ///
 
@@ -237,6 +241,8 @@ egen ingtrabw = rowtotal(i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 
 drop i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1
 
 ///
+
+
 
 *===========================================================
 * Re-codificar p505_t1 en 9 macro-categorías con etiquetas
@@ -276,5 +282,5 @@ label var sector_trabajador "Ocupación principal (9 macro-categorías)"
 
 drop sector_trabajador_orig
 
-save "final_dataset.dta",replace
-export delimited using "final_dataset.csv", replace nolabel
+save "final_dataset_v3.dta",replace
+export delimited using "final_dataset_v3.csv", replace nolabel

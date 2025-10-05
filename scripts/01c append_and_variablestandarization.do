@@ -10,7 +10,7 @@ set maxvar 10000
 
 cd "$processed"
 
-local archivos "2014-2015.dta 2015-2016.dta 2016-2017.dta 2017-2018.dta 2018-2019.dta 2019-2020.dta"
+local archivos "2011-2012.dta 2012-2013.dta 2014-2015.dta 2015-2016.dta 2016-2017.dta 2017-2018.dta 2018-2019.dta 2019-2020.dta"
 
 
 foreach x of local archivos {
@@ -36,7 +36,7 @@ cd "$final"
 
 
 
-local archivos "2014-2015_standard.dta 2015-2016_standard.dta 2016-2017_standard.dta 2017-2018_standard.dta 2018-2019_standard.dta 2019-2020_standard.dta"
+local archivos "2011-2012_standard.dta 2012-2013_standard.dta 2014-2015_standard.dta 2015-2016_standard.dta 2016-2017_standard.dta 2017-2018_standard.dta 2018-2019_standard.dta 2019-2020_standard.dta"
 
 foreach x of local archivos {
 	use "`x'",clear
@@ -49,7 +49,7 @@ foreach x of local archivos {
 
 ////////////// Final append ///////////////
 
-local archivos "2014-2015_standard.dta 2015-2016_standard.dta 2016-2017_standard.dta 2017-2018_standard.dta 2018-2019_standard.dta 2019-2020_standard.dta"
+local archivos "2011-2012_standard.dta 2012-2013_standard.dta 2014-2015_standard.dta 2015-2016_standard.dta 2016-2017_standard.dta 2017-2018_standard.dta 2018-2019_standard.dta 2019-2020_standard.dta"
 
 * Cargar el primer archivo para iniciar el dataset
 use "`: word 1 of `archivos''", clear
@@ -62,7 +62,7 @@ foreach x of local archivos {
 }
 
 * Guardar el dataset combinado
-save "$final/panel_apilado.dta", replace
+save "$final/panel_apilado_v3.dta", replace
 
 
 

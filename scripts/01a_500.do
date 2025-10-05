@@ -1,0 +1,184 @@
+cls
+clear
+global main "C:\projects\tesis_cyv"
+global data "$main/data"
+global raw "$data/raw"
+global processed "$data/processed"
+set maxvar 10000
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////    Módulo 500     /////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+////////////////////////// 2011-2012 ///////////////////////////////////
+cd "$raw/2011-2015"
+
+clear
+use "enaho01a-2011-2015-500.dta"
+
+keep if perpanel1112 == 1
+drop if codperso_11 == ""
+
+keep ocupinf_11 ocupinf_12 conglome_11 vivienda_11 dominio_11 hogar_11 codperso_11 p207_11 p208a_11 ///
+     p209_11 p501_11 p505_11 p507_11 p509_11 p510_11 p510a_11 p510b_11 p511a_11 p512a_11 p513t_11 ///
+     p513a1_11 p513a2_11 p514_11 p518_11 p519_11 p520_11 p521_11  ///
+	   ///
+	 i524a1_11 d529t_11 i530a_11 d536_11 i538a1_11 d540t_11 i541a_11 d543_11 d544t_11 i538a1_11 d538a1_11
+	 
+rename p510a_11 p510a1_11 
+	 
+// p524a1_11 p524a2_11 p530a_11 p530b_11 p535_11 p528_11 p521c_11 p558c_11 p558d_11
+// dominio_11 p505_11
+
+save "$processed/2011-2012/2011-2012_500.dta", replace
+
+////////////////////////// 2012-2013///////////////////////////////////
+cd "$raw/2012-2016"
+
+clear
+use "enaho01a-2012-2016-500_Panel.dta"
+
+keep if perpanel1213 == 1
+drop if codperso_12 == ""
+
+keep ocupinf_12 ocupinf_13 conglome_12 vivienda_12 dominio_12 hogar_12 codperso_12 p207_12 p208a_12 ///
+     p209_12 p501_12 p505_12 p507_12 p509_12 p510_12 p510a1_12 p510b_12 p511a_12 p512a_12 p513t_12 ///
+     p513a1_12 p513a2_12 p514_12 p518_12 p519_12 p520_12 p521_12  ///
+	   ///
+	 i524a1_12 d529t_12 i530a_12 d536_12 i538a1_12 d540t_12 i541a_12 d543_12 d544t_12 i538a1_12 d538a1_12
+	 
+// p524a1_12 p524a2_12 p530a_12 p530b_12 p535_12 p528_12 p521c_12 p558c_12 p558d_11
+// dominio_12 p505_12
+
+save "$processed/2012-2013/2012-2013_500.dta", replace
+
+////////////////////////// 2014-2015///////////////////////////////////
+cd "$raw/2014-2018"
+
+clear
+use "enaho01a-2014-2018-500-panel.dta"
+
+keep if perpanel1415 == 1
+drop if codperso_14 == ""
+
+keep ocupinf_14 ocupinf_15 conglome_14 vivienda_14 dominio_14 hogar_14 codperso_14 p207_14 p208a_14 ///
+     p209_14 p501_14 p505_14 p507_14 p509_14 p510_14 p510a1_14 p510b_14 p511a_14 p512a_14 p513t_14 ///
+     p513a1_14 p513a2_14 p514_14 p518_14 p519_14 p520_14 p521_14  ///
+	   ///
+	 i524a1_14 d529t_14 i530a_14 d536_14 i538a1_14 d540t_14 i541a_14 d543_14 d544t_14 i538a1_14 d538a1_14
+	 
+// p524a1_14 p524a2_14 p530a_14 p530b_14 p535_14 p528_14 p521c_14 p558c_14 p558d_14
+// dominio_14 p505_14
+
+save "$processed/2014-2015/2014-2015_500.dta", replace
+
+////////////////////////// 2015-2016 ///////////////////////////////////
+
+cd "$raw/2015-2019"
+clear
+use "enaho01a-2015-2019-500-panel_01.dta"
+
+keep if perpanel_1516 == 1
+
+drop if codperso_15==""
+
+keep ocupinf_15 ocupinf_16 conglome_15 vivienda_15 hogar_15 dominio_15 codperso_15 ///
+     p207_15 p208a_15 p209_15 p501_15 ///
+     p505_15 p507_15 p509_15 p510_15 p510a1_15 p510b_15 ///
+     p511a_15 p512a_15 p513t_15 p513a1_15 p513a2_15 ///
+     p514_15 p518_15 p519_15 p520_15 p521_15  ///
+      ///
+     i524a1_15 d529t_15 i530a_15 d536_15 i538a1_15 d540t_15 i541a_15 d543_15 d544t_15 d538a1_15
+	 
+	 /// p524a1_15 p524a2_15 p530a_15 p530b_15 p535_15 p528_15 p521c_15 p558c_15 p558d_15
+	 /// dominio_15 p505_15
+
+save "$processed/2015-2016/2015-2016_500.dta", replace
+
+////////////////////////// 2016-2017 ///////////////////////////////////
+
+cd "$raw/2016-2020"
+clear
+use "enaho01a-2016-2020-500-panel01.dta"
+
+merge 1:1 conglome vivienda numper using "enaho01a-2016-2020-500-panel02.dta"
+
+keep if _merge==3
+drop _merge
+
+keep if perpanel1617 == 1
+
+keep ocupinf_16 ocupinf_17 conglome_16 vivienda_16 hogar_16 dominio_16 codperso_16 p207_16 p208a_16 ///
+     p209_16 p501_16 p505_16 p507_16 p509_16 p510_16 p510a1_16 p510b_16 p511a_16 p512a_16 p513t_16 ///
+     p513a1_16 p513a2_16 p514_16 p518_16 p519_16 p520_16 p521_16   ///
+         i524a1_16 d529t_16 i530a_16 d536_16 i538a1_16 d540t_16 i541a_16 d543_16 d544t_16 i538a1_16 d538a1_16 
+	 
+	 /// p524a1_16 p524a2_16 p530a_16 p530b_16 p535_16 p528_16 p521c_16 p558c_16 p558d_16
+	 ///dominio_16 p505_16
+
+save "$processed/2016-2017/2016-2017_500.dta", replace
+
+////////////////////////// 2017-2018 ///////////////////////////////////
+
+cd "$raw/2017-2021"
+
+clear
+use "enaho01a-2017-2021-500-panel.dta"
+
+keep if perpanel1718 == 1
+
+keep ocupinf_17 ocupinf_18 conglome_17 vivienda_17 hogar_17 dominio_17 codperso_17 ///
+     p207_17 p208a_17 p209_17 p501_17 ///
+     p505_17 p507_17 p509_17 p510_17 p510a1_17 p510b_17 ///
+     p511a_17 p512a_17 p513t_17 p513a1_17 p513a2_17 ///
+     p514_17 p518_17 p519_17 p520_17 p521_17  ///
+      ///
+     i524a1_17 d529t_17 i530a_17 d536_17 i538a1_17 d540t_17 i541a_17 d543_17 d544t_17 d538a1_17
+	 
+	 /// p524a1_17 p524a2_17 p530a_17 p530b_17 p535_17 p528_17 p521c_17 p558c_17 p558d_17
+	 /// dominio_17 p505_17
+
+save "$processed/2017-2018/2017-2018_500.dta", replace
+
+////////////////////////// 2018-2019 ///////////////////////////////////
+
+cd "$raw/2018-2022"
+clear
+use "enaho01a-2018-2022-500-panel.dta"
+
+keep if perpanel1819==1
+
+keep ocupinf_18 ocupinf_19 conglome_18 vivienda_18 dominio_18 hogar_18 codperso_18 ///
+     p207_18 p208a_18 p209_18 p501_18 ///
+     p505_18 p507_18 p509_18 p510_18 p510a1_18 p510b_18 ///
+     p511a_18 p512a_18 p513t_18 p513a1_18 p513a2_18 ///
+     p514_18 p518_18 p519_18 p520_18 p521_18  ///
+      ///
+     i524a1_18 d529t_18 i530a_18 d536_18 i538a1_18 d540t_18 i541a_18 d543_18 d544t_18 d538a1_18
+
+///  domimio_18 p524a1_18 p524a2_18 p530a_18 p530b_18 p535_18 p528_18 p521c_18 p558c_18 p558d_18
+
+save "$processed/2018-2019/2018-2019_500.dta", replace
+
+
+////////////////////////// 2019-2023 ///////////////////////////////////
+
+cd "$raw/2019-2023"
+
+clear
+use "enaho01a-2019-2023-500-panel.dta"
+
+keep if perpanel_19_20==1
+
+keep ocupinf_19 ocupinf_20 conglome_19 dominio_19 vivienda_19 hogar_19 codperso_19 ///
+     p207_19 p208a_19 p209_19 p501_19 ///
+     p505_19 p507_19 p509_19 p510_19 p510a1_19 p510b_19 ///
+     p511a_19 p512a_19 p513t_19 p513a1_19 p513a2_19 ///
+     p514_19 p518_19 p519_19 p520_19 p521_19  ///
+      ///
+     i524a1_19 d529t_19 i530a_19 d536_19 i538a1_19 d540t_19 i541a_19 d543_19 d544t_19 d538a1_19
+	 
+/// p524a1_19 p524a2_19 p530a_19 p530b_19 p535_19 p528_19 p521c_19 p558c_19 p558d_19
+/// dominio_19 p505_19 
+
+save "$processed/2019-2020/2019-2020_500.dta", replace
