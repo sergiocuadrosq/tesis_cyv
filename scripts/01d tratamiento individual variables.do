@@ -44,6 +44,18 @@ rename p510_t1 trabajopara
 rename p510a1_t1 registropersonajuridica
 rename p510b_t1 cuentassunat
 rename p511a_t1 tipocontrato
+rename p5111_t1 pagosueldo
+rename p5112_t1 pagosalario
+rename p5113_t1 pagocomision
+rename p5114_t1 pagodestajo
+rename p5115_t1 pagosubvencion
+rename p5116_t1 pagohonorarios
+rename p5117_t1 pagoganancianegocio
+rename p5118_t1 pagoagropecuario
+rename p5119_t1 pagopropina
+rename p51110_t1 pagoespecie
+rename p51111_t1 pagootros
+rename p51112_t1 pagonorecibe
 rename p512a_t1 numpersonastrabajo
 rename p514_t1 tuvootrotrabajo
 rename p519_t1 normtrabaja
@@ -282,5 +294,158 @@ label var sector_trabajador "Ocupación principal (9 macro-categorías)"
 
 drop sector_trabajador_orig
 
-save "final_dataset_v3.dta",replace
-export delimited using "final_dataset_v3.csv", replace nolabel
+///
+
+replace pagosueldo=0 if pagosueldo==.  
+replace pagosalario=0 if pagosalario==.
+replace pagocomision=0 if pagocomision==.
+replace pagodestajo=0 if pagodestajo==.
+replace pagosubvencion=0 if pagosubvencion==.
+replace pagohonorarios=0 if pagohonorarios==.
+replace pagoganancianegocio=0 if pagoganancianegocio==.
+replace pagoagropecuario=0 if pagoagropecuario==.
+replace pagopropina=0 if pagopropina==.
+replace pagoespecie=0 if pagoespecie==.
+replace pagootros=0 if pagootros==.
+replace pagonorecibe=0 if pagonorecibe==.
+////
+
+gen recibiotransferencia=.
+replace recibiotransferencia=1 if (p5561a_t1==1 | p5562a_t1==1 | p5563a_t1==1 | p5564a_t1==1 | p5565a_t1==1 | p5566a_t1==1 | p5567a_t1==1 | p5568a_t1==1 | p5569a_t1==1)
+replace recibiotransferencia=0 if recibiotransferencia==.
+drop p5561a_t1 p5562a_t1 p5563a_t1 p5564a_t1 p5565a_t1 p5566a_t1 p5567a_t1 p5568a_t1 p5569a_t1
+
+////
+
+gen recibiorenta=.
+replace recibiorenta=1 if (p5571a_t1==1 | p5572a_t1==1 | p5573a_t1==1 | p5574a_t1==1 | p5575a_t1==1 | p5576a_t1==1 | p5577a_t1==1 | p5578a_t1==1)
+
+replace recibiorenta=0 if recibiorenta==.
+drop p5571a_t1 p5572a_t1 p5573a_t1 p5574a_t1 p5575a_t1 p5576a_t1 p5577a_t1 p5578a_t1
+////
+
+gen pension=.
+replace pension=3 if p558a5_t1==1
+replace pension=1 if p558a1_t1==1
+replace pension=2 if p558a2_t1==1
+label define pension 1 "AFP" 2 "Sistema público" 3 "No tiene plan de pensión"
+lab val pension pension
+drop p558a1_t1 p558a2_t1 p558a5_t1
+
+////
+
+gen ratiodep=.
+replace ratiodep=personas_ingresos/personas_hogar
+
+////
+
+gen     region=1 if dominio>=1 & dominio<=3 
+replace region=1 if dominio==8
+replace region=2 if dominio>=4 & dominio<=6 
+replace region=3 if dominio==7 
+label define region 1 "Costa" 2 "Sierra" 3 "Selva"
+lab val region region
+
+////
+
+replace estrato_t1=1 if dominio==8
+recode estrato_t1 (1/5=1) (6/8=2), gen(area)
+recode area (1=1) (2=0)
+label variable area "Area"
+drop estrato_t1
+label define area 1"Urbana" 0"Rural"
+label values area area
+
+///
+destring ubigeo, generate(dpto_t1)
+replace dpto_t1=dpto_t1/10000
+replace dpto_t1=round(dpto)
+label variable dpto_t1 "Departamento"
+label define dpto_t1 1 "Amazonas"
+label define dpto_t1 2 "Ancash", add
+label define dpto_t1 3 "Apurimac", add
+label define dpto_t1 4 "Arequipa", add
+label define dpto_t1 5 "Ayacucho", add
+label define dpto_t1 6 "Cajamarca", add
+label define dpto_t1 7 "Callao", add
+label define dpto_t1 8 "Cusco", add
+label define dpto_t1 9 "Huancavelica", add
+label define dpto_t1 10 "Huanuco", add
+label define dpto_t1 11 "Ica", add
+label define dpto_t1 12 "Junin", add
+label define dpto_t1 13 "La_Libertad", add
+label define dpto_t1 14 "Lambayeque", add
+label define dpto_t1 15 "Lima", add
+label define dpto_t1 16 "Loreto", add
+label define dpto_t1 17 "Madre_de_Dios", add
+label define dpto_t1 18 "Moquegua", add
+label define dpto_t1 19 "Pasco", add
+label define dpto_t1 20 "Piura", add
+label define dpto_t1 21 "Puno", add
+label define dpto_t1 22 "San_Martin", add
+label define dpto_t1 23 "Tacna", add
+label define dpto_t1 24 "Tumbes", add
+label define dpto_t1 25 "Ucayali", add
+label values dpto_t1 dpto_t1
+
+drop ubigeo_t1
+
+///
+
+*Población ocupada, según ramas de actividad
+*CIIU
+gen      ciiu_aux1 =substr("0"+string(p506r4_t1),1,.)
+replace  ciiu_aux1 =substr(string(p506r4_t1),1,.) if p506r4>999
+gen      ciiu_aux2 =substr(ciiu_aux1 ,1,2)
+destring ciiu_aux2, generate(ciiu_2d)
+gen      ciiu_1d=1 if  ciiu_2d<=2
+replace  ciiu_1d=2 if  ciiu_2d==3
+replace  ciiu_1d=3 if  ciiu_2d>=5  & ciiu_2d<=9
+replace  ciiu_1d=4 if  ciiu_2d>=10 & ciiu_2d<=33
+replace  ciiu_1d=5 if  ciiu_2d>=41 & ciiu_2d<=43
+replace  ciiu_1d=6 if  ciiu_2d>=45 & ciiu_2d<=47
+replace  ciiu_1d=7 if (ciiu_2d>=49 & ciiu_2d<=53) | (ciiu_2d>=58 & ciiu_2d<=63)
+replace  ciiu_1d=8 if  ciiu_2d==84
+replace  ciiu_1d=9 if  ciiu_2d>=55 & ciiu_2d<=56
+replace  ciiu_1d=10 if ciiu_2d==68 | (ciiu_2d>=69 & ciiu_2d<=82)
+replace  ciiu_1d=11 if ciiu_2d==85 					 
+replace  ciiu_1d=12 if (ciiu_2d>=35 & ciiu_2d<=39) | (ciiu_2d>=64 & ciiu_2d<=66)  | ///
+  (ciiu_2d>=86 & ciiu_2d<=88) |  (ciiu_2d>=90 & ciiu_2d<=93)| (ciiu_2d>=94 & ciiu_2d<=98) |  ciiu_2d==99
+  
+drop ciiu_aux1 ciiu_aux2 ciiu_2d
+					 				 
+label var ciiu_1d "Division CIIU"
+la de ciiu_1d 1 "Agricultura" 2 "Pesca"  3 "Mineria" 4 "Manufactura" 5 "Construccion" ///
+ 6 "Comercio" 7 "Transportes y Comunicaciones"  8 "Gobierno" 9 "Hoteles y Restaurantes" ///
+ 10 "Inmobiliarias y alquileres" 11 "Ensehnanza" 12 "Otros Servicios 1/"
+ label values ciiu_1d ciiu_1d
+*1/ Otros Servicios lo componen las ramas de actividad de Electricidad, Gas y Agua, 
+*Intermediación Financiera, Actividades de Servicios Sociales y de Salud, Otras activ.
+*de Serv. Comunitarias, Sociales y Personales y Hogares privados con servicio doméstico.
+
+////
+
+*Población ocupada en empleo informal por Rama de Actividad
+gen      ciiu_6c=1 if ciiu_1d<4
+replace  ciiu_6c=2 if ciiu_1d==4
+replace  ciiu_6c=3 if ciiu_1d==5
+replace  ciiu_6c=4 if ciiu_1d==6
+replace  ciiu_6c=5 if ciiu_1d==7
+replace  ciiu_6c=6 if ciiu_1d>7
+
+label var ciiu_6c "Division CIIU-6 categorias"
+la de ciiu_6c 1 "Agricultura/Pesca/Mineria" 2 "Manufactura" 3 "Construccion" ///
+ 4 "Comercio" 5 "Transportes y Comunicaciones" 6 "Otros Servicios 1/"
+ label values ciiu_6c ciiu_6c
+*1/ Otros Servicios lo componen las ramas de actividad de Electricidad, Gas y Agua, 
+*Intermediación Financiera, Actividades de Servicios Sociales y de Salud, Otras activ.
+*de Serv. Comunitarias, Sociales y Personales y Hogares privados con servicio doméstico.
+*Adicionalmente incluye Gobierno, Hoteles y Restaurantes, Inmobiliarias y alquileres y Ensehnanza
+
+drop p506r4_t1
+drop ciiu_1d
+save "final_dataset_v4.dta",replace
+export delimited using "final_dataset_v4.csv", replace nolabel
+
+
+
