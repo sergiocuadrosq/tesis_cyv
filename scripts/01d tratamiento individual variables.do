@@ -10,7 +10,7 @@ set maxvar 10000
 
 cd "$final"
  
-use "panel_apilado_v3.dta"
+use "1_panel/panel_apilado.dta"
 
 
 //////// Codificación de variable objetivo (y descarte de condiciones no necesarias)
@@ -310,26 +310,23 @@ replace pagootros=0 if pagootros==.
 replace pagonorecibe=0 if pagonorecibe==.
 ////
 
-gen recibiotransferencia=.
-replace recibiotransferencia=1 if (p5561a_t1==1 | p5562a_t1==1 | p5563a_t1==1 | p5564a_t1==1 | p5565a_t1==1 | p5566a_t1==1 | p5567a_t1==1 | p5568a_t1==1 | p5569a_t1==1)
-replace recibiotransferencia=0 if recibiotransferencia==.
+
 drop p5561a_t1 p5562a_t1 p5563a_t1 p5564a_t1 p5565a_t1 p5566a_t1 p5567a_t1 p5568a_t1 p5569a_t1
 
 ////
 
-gen recibiorenta=.
-replace recibiorenta=1 if (p5571a_t1==1 | p5572a_t1==1 | p5573a_t1==1 | p5574a_t1==1 | p5575a_t1==1 | p5576a_t1==1 | p5577a_t1==1 | p5578a_t1==1)
 
-replace recibiorenta=0 if recibiorenta==.
 drop p5571a_t1 p5572a_t1 p5573a_t1 p5574a_t1 p5575a_t1 p5576a_t1 p5577a_t1 p5578a_t1
 ////
 
-gen pension=.
-replace pension=3 if p558a5_t1==1
-replace pension=1 if p558a1_t1==1
-replace pension=2 if p558a2_t1==1
-label define pension 1 "AFP" 2 "Sistema público" 3 "No tiene plan de pensión"
-lab val pension pension
+
+gen afp=.
+replace afp=1 if p558a1_t1==1
+replace afp=0 if p558a1_t1==0
+gen onp=.
+replace onp=1 if p558a2_t1==2
+replace onp=0 if p558a2_t1==0
+
 drop p558a1_t1 p558a2_t1 p558a5_t1
 
 ////
@@ -444,8 +441,8 @@ la de ciiu_6c 1 "Agricultura/Pesca/Mineria" 2 "Manufactura" 3 "Construccion" ///
 
 drop p506r4_t1
 drop ciiu_1d
-save "final_dataset_v4.dta",replace
-export delimited using "final_dataset_v4.csv", replace nolabel
+*save "final_dataset.dta",replace
+export delimited using "1_panel/final_dataset.csv", replace nolabel
 
 
 

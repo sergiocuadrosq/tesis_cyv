@@ -1,6 +1,0 @@
-El final dataset version pavel es el presentado en la reunion del 22 de setiembre. Contiene el xgboost sin agregar las variables que agregó Miguel. Tampoco contiene los nuevos paneles. Da un rendimiento mas o menos bueno. 
-
-El final_dataset_v2 incluye las variables agregadas por Miguel.
-Tambien tiene un rendimiento regular parecido al presentado ante Pavel.
-
-El final_dataset_v3 incluye los dos nuevos paneles. Algunas variables se han eliminado, por ejemplo agua_potable, preguntas sobre antepasados, la pregunta sobre búsqueda de trabajo, etc. Tiene una mejora casi minima. Lo bueno es que ahora el rendimiento del randomforest se parece al xgboost

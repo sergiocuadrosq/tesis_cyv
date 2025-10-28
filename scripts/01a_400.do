@@ -3,6 +3,7 @@ clear
 global main "C:\projects\tesis_cyv"
 global data "$main/data"
 global raw "$data/raw"
+global panel "$raw/1_panel"
 global processed "$data/processed"
 set maxvar 10000
 
@@ -11,7 +12,7 @@ set maxvar 10000
 ///////////////////////////////////////////////////////////////////////
 
 ////////////////////////// 2011-2012///////////////////////////////////
-cd "$raw/2011-2015"
+cd "$panel/2011-2015"
 clear
 use "enaho01a-2011-2015-400.dta"
 
@@ -27,10 +28,10 @@ keep conglome_11 vivienda_11 hogar_11 codperso_11 ///
      p4097_11 p4098_11 p4099_11 p40910_11 p40911_11
 	 /// p4196_11 p4197_11 p4198_11
 
-save "$processed/2011-2012/2011-2012_400.dta", replace
+save "$processed/1_panel/2011-2012/2011-2012_400.dta", replace
 
 ////////////////////////// 2012-2013///////////////////////////////////
-cd "$raw/2012-2016"
+cd "$panel/2012-2016"
 clear
 use "enaho01a-2012-2016-400_Panel.dta"
 
@@ -46,10 +47,10 @@ keep conglome_12 vivienda_12 hogar_12 codperso_12 ///
      p4097_12 p4098_12 p4099_12 p40910_12 p40911_12
 	 /// p4196_12 p4197_12 p4198_12
 
-save "$processed/2012-2013/2012-2013_400.dta", replace
+save "$processed/1_panel/2012-2013/2012-2013_400.dta", replace
 
 ////////////////////////// 2014-2015///////////////////////////////////
-cd "$raw/2014-2018"
+cd "$panel/2014-2018"
 clear
 use "enaho01a-2014-2018-400-panel.dta"
 
@@ -65,11 +66,11 @@ keep conglome_14 vivienda_14 hogar_14 codperso_14 ///
      p4097_14 p4098_14 p4099_14 p40910_14 p40911_14
 	 /// p4196_14 p4197_14 p4198_14 p401f_14
 
-save "$processed/2014-2015/2014-2015_400.dta", replace
+save "$processed/1_panel/2014-2015/2014-2015_400.dta", replace
 
 ////////////////////////// 2015-2016 ///////////////////////////////////
 
-cd "$raw/2015-2019"
+cd "$panel/2015-2019"
 
 clear
 use "enaho01a-2015-2019-400-panel.dta"
@@ -88,11 +89,11 @@ keep conglome_15 vivienda_15 hogar_15 codperso_15 ///
      p4097_15 p4098_15 p4099_15 p40910_15 p40911_15
 	 // p4196_15 p4197_15 p4198_15 p401f_15
 
-save "$processed/2015-2016/2015-2016_400.dta", replace
+save "$processed/1_panel/2015-2016/2015-2016_400.dta", replace
 
 ////////////////////////// 2016-2017 ///////////////////////////////////
 
-cd "$raw/2016-2020"
+cd "$panel/2016-2020"
 
 clear
 use "enaho01a-2016-2020-400-panel.dta"
@@ -108,11 +109,11 @@ keep conglome_16 vivienda_16 hogar_16 codperso_16 ///
      p40910_16 p40911_16	 
 	 ///     p4196_16 p4197_16 p4198_16 p401f_16
 
-save "$processed/2016-2017/2016-2017_400.dta", replace
+save "$processed/1_panel/2016-2017/2016-2017_400.dta", replace
 
 ////////////////////////// 2017-2018 ///////////////////////////////////
 
-cd "$raw/2017-2021"
+cd "$panel/2017-2021"
 clear
 use "enaho01a-2017-2021-400-panel.dta"
 
@@ -128,11 +129,11 @@ keep conglome_17 vivienda_17 hogar_17 codperso_17 ///
 	 
 	 ///p4196_17 p4197_17 p4198_17 p401f_17
 	 
-save "$processed/2017-2018/2017-2018_400.dta", replace
+save "$processed/1_panel/2017-2018/2017-2018_400.dta", replace
 
 ////////////////////////// 2018-2019 ///////////////////////////////////
 
-cd "$raw/2018-2022"
+cd "$panel/2018-2022"
 clear
 use "enaho01a-2018-2022-400-panel.dta"
 
@@ -148,11 +149,11 @@ keep conglome_18 vivienda_18 hogar_18 codperso_18 ///
 	 
 ///  p4196_18 p4197_18 p4198_18 p401f_18
 
-save "$processed/2018-2019/2018-2019_400.dta", replace
+save "$processed/1_panel/2018-2019/2018-2019_400.dta", replace
 
 ////////////////////////// 2019-2023 ///////////////////////////////////
 
-cd "$raw/2019-2023"
+cd "$panel/2019-2023"
 clear
 use "enaho01a-2019-2023-400-panel.dta"
 
@@ -168,4 +169,4 @@ keep conglome_19 vivienda_19 hogar_19 codperso_19 ///
 
 //// p4196_19 p4197_19 p4198_19 p401f_19
 
-save "$processed/2019-2020/2019-2020_400.dta", replace
+save "$processed/1_panel/2019-2020/2019-2020_400.dta", replace

@@ -4,6 +4,8 @@ global main "C:\projects\tesis_cyv"
 global data "$main/data"
 global raw "$data/raw"
 global processed "$data/processed"
+global panel "$processed/1_panel"
+
 set maxvar 10000
 
 ///////////////////////////////////////////////////////////////////////
@@ -12,7 +14,7 @@ set maxvar 10000
 
 ////////////////////////// 2011-2012///////////////////////////////////
 clear
-cd "$processed/2011-2012/"
+cd "$panel/2011-2012/"
 
 use "2011-2012_500.dta"
 
@@ -34,11 +36,11 @@ merge m:1 conglome_11 vivienda_11 hogar_11 using "2011-2012_sumaria.dta"
 keep if _merge==3
 drop _merge
 
-save "$processed/2011-2012.dta", replace
+save "$panel/2011-2012.dta", replace
 
 ////////////////////////// 2012-2013///////////////////////////////////
 clear
-cd "$processed/2012-2013/"
+cd "$panel/2012-2013/"
 
 use "2012-2013_500.dta"
 
@@ -60,11 +62,11 @@ merge m:1 conglome_12 vivienda_12 hogar_12 using "2012-2013_sumaria.dta"
 keep if _merge==3
 drop _merge
 
-save "$processed/2012-2013.dta", replace
+save "$panel/2012-2013.dta", replace
 
 ////////////////////////// 2014-2015///////////////////////////////////
 clear
-cd "$processed/2014-2015/"
+cd "$panel/2014-2015/"
 
 use "2014-2015_500.dta"
 
@@ -86,11 +88,11 @@ merge m:1 conglome_14 vivienda_14 hogar_14 using "2014-2015_sumaria.dta"
 keep if _merge==3
 drop _merge
 
-save "$processed/2014-2015.dta", replace
+save "$panel/2014-2015.dta", replace
 
 ////////////////////////// 2015-2016 ///////////////////////////////////
 clear
-cd "$processed/2015-2016/"
+cd "$panel/2015-2016/"
 
 use "2015-2016_500.dta"
 
@@ -112,11 +114,11 @@ merge m:1 conglome_15 vivienda_15 hogar_15 using "2015-2016_sumaria.dta"
 keep if _merge==3
 drop _merge
 
-save "$processed/2015-2016.dta", replace
+save "$panel/2015-2016.dta", replace
 
 ////////////////////////// 2016-2017 ///////////////////////////////////
 clear
-cd "$processed/2016-2017/"
+cd "$panel/2016-2017/"
 
 use "2016-2017_500.dta"
 
@@ -138,11 +140,11 @@ merge m:1 conglome_16 vivienda_16 hogar_16 using "2016-2017_sumaria.dta"
 keep if _merge==3
 drop _merge
 
-save "$processed/2016-2017.dta", replace
+save "$panel/2016-2017.dta", replace
 
 ////////////////////////// 2017-2018 ///////////////////////////////////
 clear
-cd "$processed/2017-2018/"
+cd "$panel/2017-2018/"
 
 use "2017-2018_500.dta"
 
@@ -164,11 +166,11 @@ merge m:1 conglome_17 vivienda_17 hogar_17 using "2017-2018_sumaria.dta"
 keep if _merge==3
 drop _merge
 
-save "$processed/2017-2018.dta", replace
+save "$panel/2017-2018.dta", replace
 ////////////////////////// 2018-2019 ///////////////////////////////////
 
 clear
-cd "$processed/2018-2019/"
+cd "$panel/2018-2019/"
 
 use "2018-2019_500.dta"
 
@@ -190,11 +192,11 @@ merge m:1 conglome_18 vivienda_18 hogar_18 using 2018-2019_sumaria.dta
 keep if _merge==3
 drop _merge
 
-save "$processed/2018-2019.dta", replace
+save "$panel/2018-2019.dta", replace
 
 ////////////////////////// 2019-2023 ///////////////////////////////////
 clear
-cd "$processed/2019-2020/"
+cd "$panel/2019-2020/"
 
 use "2019-2020_500.dta"
 
@@ -216,4 +218,4 @@ merge m:1 conglome_19 vivienda_19 hogar_19 using 2019-2020_sumaria.dta
 keep if _merge==3
 drop _merge
 
-save "$processed/2019-2020.dta", replace
+save "$panel/2019-2020.dta", replace

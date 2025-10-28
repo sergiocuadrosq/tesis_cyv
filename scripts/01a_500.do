@@ -3,6 +3,7 @@ clear
 global main "C:\projects\tesis_cyv"
 global data "$main/data"
 global raw "$data/raw"
+global panel "$raw/1_panel"
 global processed "$data/processed"
 set maxvar 10000
 
@@ -11,7 +12,7 @@ set maxvar 10000
 ///////////////////////////////////////////////////////////////////////
 
 ////////////////////////// 2011-2012 ///////////////////////////////////
-cd "$raw/2011-2015"
+cd "$panel/2011-2015"
 
 clear
 use "enaho01a-2011-2015-500.dta"
@@ -36,10 +37,10 @@ gen p5569a_11=.
 // p524a1_11 p524a2_11 p530a_11 p530b_11 p535_11 p528_11 p521c_11 p558c_11 p558d_11
 // dominio_11 p505_11
 
-save "$processed/2011-2012/2011-2012_500.dta", replace
+save "$processed/1_panel/2011-2012/2011-2012_500.dta", replace
 
 ////////////////////////// 2012-2013///////////////////////////////////
-cd "$raw/2012-2016"
+cd "$panel/2012-2016"
 
 clear
 use "enaho01a-2012-2016-500_Panel.dta"
@@ -62,10 +63,10 @@ gen p5569a_12=.
 // p524a1_12 p524a2_12 p530a_12 p530b_12 p535_12 p528_12 p521c_12 p558c_12 p558d_11
 // dominio_12 p505_12
 
-save "$processed/2012-2013/2012-2013_500.dta", replace
+save "$processed/1_panel/2012-2013/2012-2013_500.dta", replace
 
 ////////////////////////// 2014-2015///////////////////////////////////
-cd "$raw/2014-2018"
+cd "$panel/2014-2018"
 
 clear
 use "enaho01a-2014-2018-500-panel.dta"
@@ -86,11 +87,11 @@ keep ubigeo_14 estrato_14 ocupinf_14 ocupinf_15 conglome_14 vivienda_14 dominio_
 // p524a1_14 p524a2_14 p530a_14 p530b_14 p535_14 p528_14 p521c_14 p558c_14 p558d_14
 // dominio_14 p505_14
 
-save "$processed/2014-2015/2014-2015_500.dta", replace
+save "$processed/1_panel/2014-2015/2014-2015_500.dta", replace
 
 ////////////////////////// 2015-2016 ///////////////////////////////////
 
-cd "$raw/2015-2019"
+cd "$panel/2015-2019"
 clear
 use "enaho01a-2015-2019-500-panel_01.dta"
 
@@ -113,11 +114,11 @@ keep ubigeo_15 estrato_15 ocupinf_15 ocupinf_16 conglome_15 vivienda_15 hogar_15
 	 /// p524a1_15 p524a2_15 p530a_15 p530b_15 p535_15 p528_15 p521c_15 p558c_15 p558d_15
 	 /// dominio_15 p505_15
 
-save "$processed/2015-2016/2015-2016_500.dta", replace
+save "$processed/1_panel/2015-2016/2015-2016_500.dta", replace
 
 ////////////////////////// 2016-2017 ///////////////////////////////////
 
-cd "$raw/2016-2020"
+cd "$panel/2016-2020"
 clear
 use "enaho01a-2016-2020-500-panel01.dta"
 
@@ -141,11 +142,11 @@ keep ubigeo_16 estrato_16 ocupinf_16 ocupinf_17 conglome_16 vivienda_16 hogar_16
 	 /// p524a1_16 p524a2_16 p530a_16 p530b_16 p535_16 p528_16 p521c_16 p558c_16 p558d_16
 	 ///dominio_16 p505_16
 
-save "$processed/2016-2017/2016-2017_500.dta", replace
+save "$processed/1_panel/2016-2017/2016-2017_500.dta", replace
 
 ////////////////////////// 2017-2018 ///////////////////////////////////
 
-cd "$raw/2017-2021"
+cd "$panel/2017-2021"
 
 clear
 use "enaho01a-2017-2021-500-panel.dta"
@@ -167,11 +168,11 @@ keep ubigeo_17 estrato_17 ocupinf_17 ocupinf_18 conglome_17 vivienda_17 hogar_17
 	 /// p524a1_17 p524a2_17 p530a_17 p530b_17 p535_17 p528_17 p521c_17 p558c_17 p558d_17
 	 /// dominio_17 p505_17
 
-save "$processed/2017-2018/2017-2018_500.dta", replace
+save "$processed/1_panel/2017-2018/2017-2018_500.dta", replace
 
 ////////////////////////// 2018-2019 ///////////////////////////////////
 
-cd "$raw/2018-2022"
+cd "$panel/2018-2022"
 clear
 use "enaho01a-2018-2022-500-panel.dta"
 
@@ -191,12 +192,12 @@ keep ubigeo_18 estrato_18 ocupinf_18 ocupinf_19 conglome_18 vivienda_18 dominio_
 
 ///  domimio_18 p524a1_18 p524a2_18 p530a_18 p530b_18 p535_18 p528_18 p521c_18 p558c_18 p558d_18
 
-save "$processed/2018-2019/2018-2019_500.dta", replace
+save "$processed/1_panel/2018-2019/2018-2019_500.dta", replace
 
 
 ////////////////////////// 2019-2023 ///////////////////////////////////
 
-cd "$raw/2019-2023"
+cd "$panel/2019-2023"
 
 clear
 use "enaho01a-2019-2023-500-panel.dta"
@@ -218,4 +219,4 @@ keep ubigeo_19 estrato_19 ocupinf_19 ocupinf_20 conglome_19 dominio_19 vivienda_
 /// p524a1_19 p524a2_19 p530a_19 p530b_19 p535_19 p528_19 p521c_19 p558c_19 p558d_19
 /// dominio_19 p505_19 
 
-save "$processed/2019-2020/2019-2020_500.dta", replace
+save "$processed/1_panel/2019-2020/2019-2020_500.dta", replace

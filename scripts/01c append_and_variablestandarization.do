@@ -4,11 +4,12 @@ global main "C:\projects\tesis_cyv"
 global data "$main/data"
 global raw "$data/raw"
 global processed "$data/processed"
+global panel "$processed/1_panel"
 global logs "$main/docs/logs"
 global final "$data/final"
 set maxvar 10000
 
-cd "$processed"
+cd "$panel"
 
 local archivos "2011-2012.dta 2012-2013.dta 2014-2015.dta 2015-2016.dta 2016-2017.dta 2017-2018.dta 2018-2019.dta 2019-2020.dta"
 
@@ -25,7 +26,7 @@ foreach x of local archivos {
 		}
 	}
     local newname = substr("`x'", 1, length("`x'") - 4) + "_standard.dta"
-    save "$final/`newname'", replace 
+    save "$final/1_panel/1_standard_panel/`newname'", replace 
 	
 }
 
@@ -62,7 +63,7 @@ foreach x of local archivos {
 }
 
 * Guardar el dataset combinado
-save "$final/panel_apilado_v3.dta", replace
+save "$final/1_panel/panel_apilado.dta", replace
 
 
 
