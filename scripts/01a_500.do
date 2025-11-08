@@ -28,7 +28,7 @@ keep ubigeo_11 estrato_11 ocupinf_11 ocupinf_12 conglome_11 vivienda_11 dominio_
 	 p5561a_11 p5562a_11 p5563a_11 p5564a_11 p5565a_11 p5566a_11 p5567a_11 p5568a_11 ///
 	 p5571a_11 p5572a_11 p5573a_11 p5574a_11 p5575a_11 p5576a_11 p5577a_11 p5578a_11 ///
 	 p558a1_11 p558a2_11 p558a5_11 ///
-	 i524a1_11 d529t_11 i530a_11 d536_11 i538a1_11 d540t_11 i541a_11 d543_11 d544t_11 i538a1_11 d538a1_11
+	 i524a1_11 d529t_11 i530a_11 d536_11 i538a1_11 d540t_11 i541a_11 d543_11 d544t_11 i538a1_11 d538a1_11 
 	 
 rename p510a_11 p510a1_11
 /// Ante missing de transferencia Pension 65

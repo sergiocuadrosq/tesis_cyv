@@ -33,7 +33,7 @@ foreach x of local archivos {
 
 clear 
 
-cd "$final"
+cd "$final/1_panel/1_standard_panel/"
 
 
 
