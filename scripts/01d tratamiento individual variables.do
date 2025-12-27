@@ -132,7 +132,18 @@ rename pobreza_t1 pobreza
 ////////////////Tratamiento individual//////////////////
 ////////////////////////////////////////////////////////
 
-//
+// ------ Ingresos -------
+
+egen ingtrabw = rowtotal(i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1)
+drop i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1
+
+// ------- Alquiler -------
+
+egen alquiler = rowtotal(p105b_t1 p106_t1)
+drop p105b_t1 p106_t1
+
+
+
 
 gen tiempotrabajo = p513a1_t1 + (p513a2_t1/12) 
 drop p513a1_t1 p513a2_t1
@@ -170,8 +181,7 @@ replace agua_procedencia = 7 if agua_procedencia==8
 
 //
 
-egen alquiler = rowtotal(p105b_t1 p106_t1)
-drop p105b_t1 p106_t1
+
 
 //
 
@@ -203,9 +213,9 @@ replace notiempo = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | 
 replace maltrato = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
 replace otro_motivo = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1 | centroopuesto == 1 | posta == 1 | hospital_minsa == 1 | hospital_ffaa == 1 | hospital_seguro == 1 | consultorio == 1 | clinica == 1
 
-//
 
-replace numpersonastrabajo = 99 if trabajopara==1
+// Personas que trabajan para FF.AA. supondremos que trabajan con mas de 500 personas
+replace numpersonastrabajo = 5 if trabajopara==1
 
 // 	
 
@@ -249,8 +259,7 @@ replace horas_normtrabaja=horastotales_sempasada if horas_normtrabaja==.
 
 ///
 
-egen ingtrabw = rowtotal(i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1)
-drop i524a1_t1 d529t_t1 i530a_t1 d536_t1 i538a1_t1 d540t_t1 i541a_t1 d543_t1 d544t_t1 i538a1_t1 d538a1_t1
+
 
 ///
 

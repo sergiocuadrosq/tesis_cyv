@@ -117,7 +117,33 @@ rename pobreza pobreza
 ////////////////Tratamiento individual//////////////////
 ////////////////////////////////////////////////////////
 
-//
+
+destring periodo, replace
+
+replace estrato=1 if dominio==8
+recode estrato (1/5=1) (6/8=2), gen(area)
+recode area (1=1) (2=0)
+label variable area "Area"
+drop estrato
+label define area 1"Urbana" 0"Rural"
+label values area area
+
+// Sobre los ingresos (creación del ingreso mensual, tabla sobre el ingreso promedio de los formales)
+
+recode i524a1 d529t i530a d536 i538a1 d540t i541a d543 d544t i538a_1 d538a_2 (.=0)
+egen ingtrabw=rowtotal(i524a1 d529t i530a d536 i538a1 d540t i541a d543 d544t i538a_1 d538a_2)
+label var ingtrabw "Ingreso por trabajo anual nominal"
+drop i524a1 d529t i530a d536 i538a1 d540t i541a d543 d544t i538a_1 d538a_2 i518 i513t
+gen ingtra_n=ingtrabw/12
+
+gen resi=1 if ((p204==1 & p205==2) | (p204==2 & p206==1))
+drop p204 p205 p206
+
+keep if ocu500 == 1 & ingtra_n > 0 
+keep if resi==1
+table periodo area [iw=fac500a], stat(mean ingtra_n)
+////
+
 
 gen tiempotrabajo = p513a1 + (p513a2/12) 
 drop p513a1 p513a2
@@ -190,7 +216,7 @@ replace otro_motivo = 99 if notuvoenf == 1 | puestosalud == 1 | centrosalud == 1
 
 //
 
-replace numpersonastrabajo = 99 if trabajopara==1
+replace numpersonastrabajo = 5 if trabajopara==1
 
 // 	
 
@@ -234,8 +260,7 @@ replace horas_normtrabaja=horastotales_sempasada if horas_normtrabaja==.
 
 ///
 
-egen ingtrabw = rowtotal(i524a1 d529t i530a d536 i538a1 d540t i541a d543 d544t i538a1 d538a1)
-drop i524a1 d529t i530a d536 i538a1 d540t i541a d543 d544t i538a1 d538a1
+
 
 ///
 
@@ -330,13 +355,6 @@ lab val region region
 
 ////
 
-replace estrato=1 if dominio==8
-recode estrato (1/5=1) (6/8=2), gen(area)
-recode area (1=1) (2=0)
-label variable area "Area"
-drop estrato
-label define area 1"Urbana" 0"Rural"
-label values area area
 
 ///
 destring ubigeo, generate(dpto)
